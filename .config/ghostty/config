@@ -1,0 +1,35 @@
+## Confirm closing window
+confirm-close-surface = false
+
+## Clipboard
+clipboard-read = "allow"
+clipboard-paste-protection = false
+
+## Background
+background-opacity = 1
+
+## Theme
+##theme = Arthur
+theme = CutiePro
+font-family = MesloLGS Nerd Font
+font-size = 10
+
+## Cursor
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = true
+
+## Window padding & decoration
+window-padding-x = 4
+window-padding-y = 4
+window-padding-balance = true
+window-padding-color = background
+window-decoration = true 
+
+## Working Directory
+window-inherit-working-directory = true
+window-inherit-font-size = true
+working-directory = home
+
+## Keybinds
+keybind = ctrl+shift+x=close_surface
