@@ -1,18 +1,22 @@
 ## Confirm closing window
 confirm-close-surface = false
 
+## Commands
+##command = /usr/bin/nu
+
 ## Clipboard
 clipboard-read = "allow"
 clipboard-paste-protection = false
 
 ## Background
-background-opacity = 1
+background-opacity = 0.7
 
 ## Theme
 ##theme = Arthur
 theme = CutiePro
 font-family = MesloLGS Nerd Font
-font-size = 10
+font-size = 14
+background = #000000
 
 ## Cursor
 shell-integration-features = no-cursor
