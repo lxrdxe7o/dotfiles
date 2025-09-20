@@ -1,5 +1,6 @@
 zoxide init fish | source
 starship init fish | source
+atuin init fish | source
 
 # Aliases being used
 alias fetch='fastfetch'
