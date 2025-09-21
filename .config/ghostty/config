@@ -2,15 +2,16 @@
 confirm-close-surface = false
 
 ## Commands
-##command = /usr/bin/nu
+initial-command = direct:tmux attach
 command = /usr/bin/fish
 
 ## Clipboard
+copy-on-select = clipboard
 clipboard-read = "allow"
 clipboard-paste-protection = false
 
 ## Background
-background-opacity = 0.7
+background-opacity = 0.8
 
 ## Theme
 ##theme = Arthur
