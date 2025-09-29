@@ -43,6 +43,7 @@ source $ZSH/oh-my-zsh.sh
 # Aliases being used
 alias fetch='fastfetch'
 alias lg='lazygit'
+alias ta='tmux attach'
 
 # Set-up icons for files/directories in terminal using lsd
 alias ls='lsd'
