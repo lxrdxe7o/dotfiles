@@ -4,7 +4,8 @@ pokemon-colorscripts --no-title -s -r | fastfetch -c {$HOME}/.config/fastfetch/c
 
 zoxide init fish | source
 starship init fish | source
-atuin init fish | source
+#atuin init fish | source
+source {$HOME}/.config/fish/atuin.fish
 
 # Aliases being used
 alias fetch='fastfetch'
