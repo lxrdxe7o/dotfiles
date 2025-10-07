@@ -1,39 +1,61 @@
 #!/bin/bash
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
-# Wallust Colors for current wallpaper
+# 💫 Robust swww → Wallust sync script (by Xero) 💫
 
-# Define the path to the swww cache directory
-cache_dir="$HOME/.cache/swww/"
+set -euo pipefail  # Exit on error, unset variables, or failed pipes
 
-# Get a list of monitor outputs
-monitor_outputs=($(ls "$cache_dir"))
+# --- Config Paths ---
+CACHE_DIR="$HOME/.cache/swww"
+ROFI_LINK="$HOME/.config/rofi/.current_wallpaper"
+EFFECT_COPY="$HOME/.config/hypr/wallpaper_effects/.wallpaper_current"
 
-# Initialize a flag to determine if the ln command was executed
-ln_success=false
+# --- Ensure necessary directories exist ---
+mkdir -p "$(dirname "$ROFI_LINK")"
+mkdir -p "$(dirname "$EFFECT_COPY")"
 
-# Get current focused monitor
+# --- Check dependencies ---
+for cmd in hyprctl wallust cp ln tail; do
+    command -v "$cmd" >/dev/null 2>&1 || { 
+        echo "❌ Missing required command: $cmd"; 
+        exit 1; 
+    }
+done
+
+# --- Get focused monitor ---
 current_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
-echo $current_monitor
-# Construct the full path to the cache file
-cache_file="$cache_dir$current_monitor"
-echo $cache_file
-# Check if the cache file exists for the current monitor output
-if [ -f "$cache_file" ]; then
-    # Get the wallpaper path from the cache file
-    wallpaper_path=$(grep -v 'Lanczos3' "$cache_file" | head -n 1)
-    echo $wallpaper_path
-    # symlink the wallpaper to the location Rofi can access
-    if ln -sf "$wallpaper_path" "$HOME/.config/rofi/.current_wallpaper"; then
-        ln_success=true  # Set the flag to true upon successful execution
-    fi
-    # copy the wallpaper for wallpaper effects
-	cp -r "$wallpaper_path" "$HOME/.config/hypr/wallpaper_effects/.wallpaper_current"
+
+if [ -z "$current_monitor" ]; then
+    echo "❌ Could not detect focused monitor"
+    exit 1
 fi
 
-# Check the flag before executing further commands
-if [ "$ln_success" = true ]; then
-    # execute wallust
-	echo 'about to execute wallust'
-    # execute wallust skipping tty and terminal changes
-    wallust run "$wallpaper_path" -s &
+cache_file="$CACHE_DIR/$current_monitor"
+
+if [ ! -f "$cache_file" ]; then
+    echo "❌ Cache file not found for monitor '$current_monitor': $cache_file"
+    exit 1
 fi
+
+# --- Extract wallpaper path ---
+raw_path=$(tail -n 1 "$cache_file")
+# Remove any prefix before the first /
+wallpaper_path=$(echo "$raw_path" | grep -o '/.*')
+
+# Extra check if the path is empty or invalid
+if [ -z "$wallpaper_path" ] || [ ! -f "$wallpaper_path" ]; then
+    echo "❌ Wallpaper path invalid or file does not exist: '$wallpaper_path'"
+    exit 1
+fi
+
+echo "🎨 Current wallpaper: $wallpaper_path"
+
+# --- Symlink for Rofi ---
+ln -sf "$wallpaper_path" "$ROFI_LINK"
+
+# --- Copy for wallpaper effects ---
+cp -f "$wallpaper_path" "$EFFECT_COPY"
+
+# --- Run Wallust to generate color scheme ---
+echo "🚀 Running Wallust..."
+wallust run "$wallpaper_path" -s &
+
+echo "✅ Done!"
