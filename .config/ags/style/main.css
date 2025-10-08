@@ -1,0 +1,3109 @@
+/* prelude */
+/* Theme mode and scheme variables */
+/*
+* Css Colors
+* Generated with Matugen
+*/
+/* general color variables */
+/* os icon colors */
+/* workspaces colors */
+/* button colors */
+/* hw circular proc colors */
+/* numeric variables */
+* {
+  all: unset;
+  font-family: FiraCode Nerd Font;
+  color: rgb(227, 226, 225);
+  text-shadow: 0 2px 3px rgba(18, 20, 19, 0.2);
+}
+
+/* variables & mixins */
+/* general styles */
+tooltip.background,
+tooltip > box {
+  background-color: rgb(18, 20, 19);
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 0 rgba(0, 0, 0, 0.4);
+}
+tooltip.background label,
+tooltip > box label {
+  margin: 0.1rem 0.4rem;
+}
+
+/* scales */
+scale trough {
+  background-color: rgba(56, 57, 57, 0.6);
+  border-radius: 0.5rem;
+  min-width: calc(0.5rem * 10);
+  padding: 0 calc(0.5rem / 2);
+}
+scale highlight,
+scale progress {
+  background: rgba(227, 226, 225, 0.75);
+  border-radius: 0.5rem;
+  margin: 0 calc(0px - 0.5rem / 2);
+  min-height: 0.5rem;
+}
+
+/* popovers */
+popover {
+  background: rgb(18, 20, 19);
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+popover modelbutton {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(56, 57, 57, 0.6);
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+popover modelbutton:hover {
+  background: rgba(56, 57, 57, 0.99);
+}
+popover modelbutton {
+  border-radius: 0;
+  padding: 0.4rem 0.7rem;
+}
+popover modelbutton:first-child {
+  border-radius: 8px 8px 0 0;
+}
+popover modelbutton:last-child {
+  border-radius: 0 0 8px 8px;
+}
+popover modelbutton:only-child {
+  border-radius: 8px;
+}
+
+/* buttons */
+.button {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(184, 202, 199, 0.2);
+  border: 1px solid rgba(184, 202, 199, 0.3);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+.button:hover {
+  background: rgba(184, 202, 199, 0.3);
+}
+
+.button-disabled {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(56, 57, 57, 0.6);
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+.button-disabled:hover {
+  background: rgba(56, 57, 57, 0.99);
+}
+
+/* Component imports - loaded from theme directory via --load-path */
+/* variables & mixins */
+/* general styles */
+/* general */
+/* Base bar styles */
+.Bar {
+  border-radius: calc(8px * 4);
+  font-size: 1.1rem;
+}
+.Bar cava {
+  opacity: 0.1;
+  margin: 0 -0.5rem;
+}
+.Bar .module {
+  margin: 0 0.4rem;
+}
+.Bar {
+  /* OS Icon */
+}
+.Bar .OsIcon {
+  -gtk-icon-size: 2rem;
+  margin-left: 0.8rem;
+  margin-right: -0.5rem;
+  color: rgb(199, 198, 197);
+}
+.Bar {
+  /* Hyperland */
+}
+.Bar .Workspaces {
+  margin: 0.4rem 0.8rem;
+}
+.Bar .Workspaces button {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 0.7rem;
+  margin: 0.6rem 0.35rem;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  transition: 100ms linear;
+  box-shadow: inset -2px -2px 2px rgba(18, 20, 19, 0.3);
+}
+.Bar .Workspaces .focused {
+  min-width: 2.5rem;
+}
+.Bar .Workspaces .monitor0 {
+  background: rgb(103.5, 120.8, 118.5);
+  box-shadow: inset -2px -2px 2px rgb(77.625, 90.6, 88.875);
+}
+.Bar .Workspaces .monitor0:hover {
+  background: rgb(142.25, 159.8, 157.25);
+  box-shadow: inset -2px -2px 2px rgb(103.7094012984, 122.8280987016, 120.0501683097);
+}
+.Bar .Workspaces .monitor1 {
+  background: rgb(127, 153.5, 150);
+  box-shadow: inset -2px -2px 2px rgb(93.0416666667, 117.3333333333, 114.125);
+}
+.Bar .Workspaces .monitor1:hover {
+  background: rgb(157.8, 184.9, 181.2);
+  box-shadow: inset -2px -2px 2px rgb(108.0234907352, 149.0015092648, 143.4067244471);
+}
+.Bar .Workspaces .monitor2 {
+  background: rgb(109.5, 119.8, 117.5);
+  box-shadow: inset -2px -2px 2px rgb(82.125, 89.85, 88.125);
+}
+.Bar .Workspaces .monitor2:hover {
+  background: rgb(148.25, 158.8, 156.25);
+  box-shadow: inset -2px -2px 2px rgb(109.1582039911, 121.1292960089, 118.2358093126);
+}
+.Bar .Workspaces .monitor3 {
+  background: rgb(145.3, 155.7, 153.3);
+  box-shadow: inset -2px -2px 2px rgb(107.2582535885, 118.4917464115, 115.8994019139);
+}
+.Bar .Workspaces .monitor3:hover {
+  background: rgb(108.05, 117.95, 116.05);
+  box-shadow: inset -2px -2px 2px rgb(81.0375, 88.4625, 87.0375);
+}
+.Bar {
+  /* music */
+}
+.Bar .Media > box {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  border-radius: 16px;
+  margin: 0.4rem;
+  font-size: 1.1rem;
+}
+.Bar .Media > box cava {
+  opacity: 0.3;
+}
+.Bar .Media.active > box {
+  background: rgba(56, 57, 57, 0.6);
+}
+.Bar .Media .cover {
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  min-width: 2.5rem;
+  min-height: 2rem;
+  margin: 0.1rem 0.4rem;
+}
+.Bar {
+  /* tray */
+}
+.Bar .SysTray {
+  background: none;
+}
+.Bar .SysTray image {
+  -gtk-icon-size: 1.1rem;
+}
+.Bar .SysTray .tray-item {
+  margin: 0rem 0.3rem;
+}
+.Bar .SysTray:not(:last-child) {
+  margin-right: -0.3rem;
+}
+.Bar .SysTray.active {
+  background: rgba(56, 57, 57, 0.6);
+}
+.Bar {
+  /* hw-monitor */
+}
+.Bar .bar-hw-ram-box {
+  margin-right: 0.4rem;
+  margin-left: 0.3rem;
+}
+.Bar .bar-hw-ram-box circularprogress progress {
+  color: rgb(140.82, 158.48, 155.82);
+  min-width: 2.3rem;
+}
+.Bar .bar-hw-ram-box circularprogress radius {
+  color: rgba(18, 20, 19, 0.5);
+}
+.Bar .bar-hw-ram-box button label {
+  font-family: "Material Symbols Outlined";
+}
+.Bar .bar-hw-ram-box circularprogress progress {
+  color: rgb(140.82, 158.48, 155.82);
+}
+.Bar .bar-hw-ram-box button label {
+  margin: 1px 0px 0px 2px;
+  font-size: 1.2rem;
+}
+.Bar .bar-hw-cpu-box {
+  margin-right: 0.4rem;
+  margin-left: 0.3rem;
+}
+.Bar .bar-hw-cpu-box circularprogress progress {
+  color: rgb(140.82, 158.48, 155.82);
+  min-width: 2.3rem;
+}
+.Bar .bar-hw-cpu-box circularprogress radius {
+  color: rgba(18, 20, 19, 0.5);
+}
+.Bar .bar-hw-cpu-box button label {
+  font-family: "Material Symbols Outlined";
+}
+.Bar .bar-hw-cpu-box circularprogress progress {
+  color: rgb(133.82, 160.14, 156.48);
+}
+.Bar .bar-hw-cpu-box button label {
+  margin: 1px 0px 0px 1px;
+  font-size: 1.3rem;
+}
+.Bar {
+  /* System menu */
+}
+.Bar .system-menu-toggler box {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  margin: 0.4rem 0;
+  border-radius: 16px;
+  -gtk-icon-size: 1.1rem;
+}
+.Bar .system-menu-toggler.active box {
+  background: rgba(56, 57, 57, 0.6);
+}
+.Bar .separator {
+  font-size: 1.8rem;
+  color: rgb(145, 145, 144);
+}
+.Bar .clock {
+  margin: 0 1.2rem 0 0.4rem;
+}
+.Bar .power-button {
+  margin: 0 1.2rem 0 0rem;
+}
+
+/* Floating elements style */
+.bar-style-floating .centerbox > box {
+  background: rgba(18, 20, 19, 0.5);
+  border-radius: calc(8px * 4);
+  box-shadow: inset -2px -2px 3px rgba(0, 0, 0, 0.4), -1px -1px 2px rgba(18, 20, 19, 0.5);
+  padding: 0 0.5rem;
+  margin: 0 0.3rem;
+}
+
+/* Full-width style */
+.bar-style-expanded {
+  background: rgba(18, 20, 19, 0.5);
+  border-radius: calc(8px * 4);
+  box-shadow: inset -2px -2px 3px rgba(0, 0, 0, 0.4), -1px -1px 2px rgba(18, 20, 19, 0.5);
+  padding: 0 0.5rem;
+  margin: 0 0.3rem;
+}
+
+/* Beveled style */
+.bar-style-beveled {
+  background: rgba(18, 20, 19, 0.5);
+  border-radius: 0.8rem;
+  box-shadow: inset -2px -2px 3px rgba(0, 0, 0, 0.4), -1px -1px 2px rgba(18, 20, 19, 0.5);
+  padding: 0 0.5rem;
+  margin: 0 0.3rem;
+}
+
+/* Corner-integrated style */
+.bar-style-corners {
+  background: rgba(18, 20, 19, 0.5);
+  border-radius: 0;
+}
+
+/* variables & mixins */
+/* general styles */
+box.clipboard {
+  border-radius: 16px;
+  box-shadow: 0 3px 5px 1px rgba(18, 20, 19, 0.1);
+  background: rgba(18, 20, 19, 0.5);
+  margin: 5px 10px 15px;
+  padding: 0.4rem;
+}
+
+.mode-bar {
+  border-radius: calc(16px - 0.4rem - 2px);
+  padding: 6px 10px;
+  background-color: rgba(18, 20, 19, 0.45);
+  border-bottom: 1px solid rgba(227, 226, 225, 0.12);
+  margin: 0.4rem 0.4rem 0;
+}
+.mode-bar .mode-button {
+  border-radius: calc(16px - 0.4rem - 2px);
+  padding: 4px 12px;
+  margin: 0 2px;
+  background-color: transparent;
+  border: 1px solid rgba(227, 226, 225, 0.12);
+  color: rgba(227, 226, 225, 0.7);
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: all 0.18s ease;
+}
+.mode-bar .mode-button:hover {
+  background-color: rgba(227, 226, 225, 0.06);
+  border-color: rgba(227, 226, 225, 0.2);
+  color: rgb(227, 226, 225);
+}
+.mode-bar .mode-button.active {
+  background-color: rgba(184, 202, 199, 0.15);
+  border-color: rgba(184, 202, 199, 0.5);
+  color: rgb(184, 202, 199);
+  font-weight: 600;
+}
+.mode-bar .clear-all-button {
+  border-radius: calc(16px - 0.4rem - 2px);
+  padding: 4px 12px;
+  margin: 0 6px 0 2px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 180, 171, 0.3);
+  color: rgb(255, 180, 171);
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: all 0.18s ease;
+}
+.mode-bar .clear-all-button:hover {
+  background-color: rgb(255, 180, 171);
+  color: white;
+  border-color: rgb(255, 180, 171);
+}
+.mode-bar .clear-all-button:hover label.mode-icon {
+  color: white;
+}
+.mode-bar label.mode-icon {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-size: 1rem;
+  margin-right: 4px;
+  opacity: 0.85;
+}
+.mode-bar .entry-count {
+  font-size: 0.8rem;
+  color: rgba(227, 226, 225, 0.55);
+  margin: auto 8px auto 0;
+  font-weight: 500;
+}
+
+.search-section {
+  border-radius: calc(16px - 0.4rem - 2px);
+  box-shadow: 0 1px 5px -5px rgba(0, 0, 0, 0.5);
+  background: rgba(56, 57, 57, 0.6);
+  margin: 0.4rem;
+  padding: 0.4rem;
+  margin: 0.5rem 0.4rem;
+  background-color: rgba(227, 226, 225, 0.04);
+  padding: 6px 10px;
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  transition: all 0.2s ease;
+}
+.search-section label.search-icon {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-size: 1.1rem;
+  margin: 0 6px 0 2px;
+  color: rgba(227, 226, 225, 0.5);
+}
+.search-section entry.search-entry {
+  font-size: 0.95rem;
+  padding: 4px 8px;
+  background: transparent;
+  border: none;
+  color: rgb(227, 226, 225);
+}
+.search-section entry.search-entry:focus {
+  outline: none;
+  box-shadow: none;
+}
+.search-section .shortcut-hint {
+  font-size: 0.75rem;
+  color: rgba(227, 226, 225, 0.45);
+  margin-left: 4px;
+  margin-right: 4px;
+  font-weight: 500;
+}
+
+.clipboard-list {
+  border-radius: calc(16px - 0.4rem - 2px);
+  box-shadow: 0 1px 5px -5px rgba(0, 0, 0, 0.5);
+  background: rgba(56, 57, 57, 0.6);
+  margin: 0.4rem;
+  padding: 0.4rem;
+  margin: 0 0.4rem 0.5rem;
+  padding: 2px;
+}
+.clipboard-list button.clipboard-entry {
+  border-radius: calc(16px - 0.4rem - 2px);
+  padding: 6px 10px;
+  margin: 2px 0;
+  background-color: transparent;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+.clipboard-list button.clipboard-entry:hover {
+  background-color: rgba(227, 226, 225, 0.04);
+  border-color: rgba(227, 226, 225, 0.08);
+}
+.clipboard-list button.clipboard-entry.selected {
+  background-color: rgba(184, 202, 199, 0.12);
+  border-color: rgba(184, 202, 199, 0.25);
+  box-shadow: 0 1px 2px rgba(184, 202, 199, 0.15);
+}
+.clipboard-list button.clipboard-entry.selected .entry-text {
+  color: rgb(184, 202, 199);
+  font-weight: 500;
+}
+.clipboard-list button.clipboard-entry .entry-text {
+  font-size: 0.85rem;
+  color: rgb(227, 226, 225);
+  margin-right: auto;
+  line-height: 1.3;
+  font-weight: 400;
+}
+.clipboard-list button.clipboard-entry label.delete-icon {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-size: 1rem;
+  color: rgba(255, 180, 171, 0.6);
+  margin-left: 8px;
+  transition: color 0.15s ease;
+}
+.clipboard-list button.clipboard-entry label.delete-icon:hover {
+  color: rgb(255, 180, 171);
+}
+.clipboard-list button.clipboard-entry.image-entry {
+  padding: 8px;
+}
+.clipboard-list button.clipboard-entry.image-entry .entry-image {
+  border-radius: 4px;
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  transition: all 0.15s ease;
+}
+.clipboard-list button.clipboard-entry.image-entry.selected .entry-image {
+  border-color: rgba(184, 202, 199, 0.4);
+  box-shadow: 0 2px 8px rgba(184, 202, 199, 0.3);
+}
+.clipboard-list button.clipboard-entry.image-entry:hover .entry-image {
+  border-color: rgba(227, 226, 225, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+.clipboard-list label.no-entries {
+  padding: 30px 16px;
+  color: rgba(227, 226, 225, 0.5);
+  font-style: italic;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+button.invisible-close {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+}
+
+/* variables & mixins */
+/* general styles */
+.dock-window {
+  background-color: transparent;
+}
+
+.dock-container {
+  background-color: transparent;
+  padding: 8px;
+  padding-bottom: 12px;
+  min-height: 80px;
+}
+
+.dock {
+  background: linear-gradient(to bottom, rgba(37.3263157895, 41.4736842105, 39.4, 0.4), rgba(22.8315789474, 25.3684210526, 24.1, 0.3));
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  padding: 5px 10px;
+  border: 1px solid rgba(227, 226, 225, 0.18);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(227, 226, 225, 0.12), inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: bottom center;
+  position: relative;
+}
+.dock::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(227, 226, 225, 0.08), transparent);
+  border-radius: 20px 20px 0 0;
+  pointer-events: none;
+}
+.dock.hidden {
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  pointer-events: none;
+}
+
+.dock-item {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 16px;
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  min-width: 48px;
+  min-height: 48px;
+  transform-origin: bottom center;
+  position: relative;
+}
+.dock-item .icon-background {
+  background: linear-gradient(135deg, rgba(227, 226, 225, 0.14), rgba(227, 226, 225, 0.1));
+  border-radius: 14px;
+  padding: 0;
+  min-width: 48px;
+  min-height: 48px;
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), inset 0 1px 1px rgba(227, 226, 225, 0.2), inset 0 -1px 1px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+.dock-item .icon-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to bottom, rgba(227, 226, 225, 0.15), transparent);
+  border-radius: 14px 14px 0 0;
+  pointer-events: none;
+}
+.dock-item image {
+  opacity: 0.85;
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+  min-width: 32px;
+  min-height: 32px;
+  margin: 8px;
+}
+.dock-item:hover {
+  min-width: 58px;
+  min-height: 58px;
+  margin-bottom: 8px;
+  z-index: 10;
+}
+.dock-item:hover .icon-background {
+  background: linear-gradient(135deg, rgba(227, 226, 225, 0.2), rgba(227, 226, 225, 0.14));
+  min-width: 58px;
+  min-height: 58px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22), inset 0 1px 2px rgba(227, 226, 225, 0.25), inset 0 -1px 1px rgba(0, 0, 0, 0.2);
+}
+.dock-item:hover .icon-background::before {
+  height: 45%;
+  background: linear-gradient(to bottom, rgba(227, 226, 225, 0.22), transparent);
+}
+.dock-item:hover image {
+  opacity: 1;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.25));
+  min-width: 42px;
+  min-height: 42px;
+  margin: 8px;
+}
+.dock-item:hover + .dock-item, .dock-item:has(+ .dock-item:hover) {
+  min-width: 52px;
+  min-height: 52px;
+  margin-bottom: 4px;
+}
+.dock-item:hover + .dock-item .icon-background, .dock-item:has(+ .dock-item:hover) .icon-background {
+  min-width: 52px;
+  min-height: 52px;
+}
+.dock-item:hover + .dock-item image, .dock-item:has(+ .dock-item:hover) image {
+  min-width: 36px;
+  min-height: 36px;
+  margin: 8px;
+}
+.dock-item.running::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background-color: rgba(227, 226, 225, 0.7);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.dock-item.running.active::after {
+  opacity: 1;
+  background-color: rgb(184, 202, 199);
+}
+.dock-item.running:not(.active)::after {
+  opacity: 0.6;
+}
+.dock-item.active .icon-background {
+  background: linear-gradient(135deg, rgba(207.3612903226, 219.4387096774, 217.4258064516, 0.25), rgba(175.239516129, 195.460483871, 192.0903225806, 0.18));
+  box-shadow: 0 0 20px rgba(184, 202, 199, 0.6), 0 0 40px rgba(184, 202, 199, 0.3), 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(219.0419354839, 228.1580645161, 226.6387096774, 0.35), inset 0 -1px 1px rgba(0, 0, 0, 0.2);
+}
+.dock-item.active .icon-background::before {
+  background: linear-gradient(to bottom, rgba(227.8024193548, 234.6975806452, 233.5483870968, 0.3), transparent);
+}
+.dock-item.active image {
+  opacity: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+.dock.hidden .dock-item:nth-child(1) {
+  transition-delay: 0.12s;
+  opacity: 0;
+  transform: translateY(10px) scale(0.8);
+}
+.dock.hidden .dock-item:nth-child(1) .icon-background {
+  transition-delay: 0.12s;
+}
+.dock.hidden .dock-item:nth-child(1) image {
+  transition-delay: 0.12s;
+}
+.dock.hidden .dock-item:nth-child(2) {
+  transition-delay: 0.09s;
+  opacity: 0;
+  transform: translateY(10px) scale(0.8);
+}
+.dock.hidden .dock-item:nth-child(2) .icon-background {
+  transition-delay: 0.09s;
+}
+.dock.hidden .dock-item:nth-child(2) image {
+  transition-delay: 0.09s;
+}
+.dock.hidden .dock-item:nth-child(3) {
+  transition-delay: 0.06s;
+  opacity: 0;
+  transform: translateY(10px) scale(0.8);
+}
+.dock.hidden .dock-item:nth-child(3) .icon-background {
+  transition-delay: 0.06s;
+}
+.dock.hidden .dock-item:nth-child(3) image {
+  transition-delay: 0.06s;
+}
+.dock.hidden .dock-item:nth-child(4) {
+  transition-delay: 0.03s;
+  opacity: 0;
+  transform: translateY(10px) scale(0.8);
+}
+.dock.hidden .dock-item:nth-child(4) .icon-background {
+  transition-delay: 0.03s;
+}
+.dock.hidden .dock-item:nth-child(4) image {
+  transition-delay: 0.03s;
+}
+.dock.hidden .dock-item:nth-child(5) {
+  transition-delay: 0s;
+  opacity: 0;
+  transform: translateY(10px) scale(0.8);
+}
+.dock.hidden .dock-item:nth-child(5) .icon-background {
+  transition-delay: 0s;
+}
+.dock.hidden .dock-item:nth-child(5) image {
+  transition-delay: 0s;
+}
+.dock.hidden .dock-item:nth-child(6) {
+  transition-delay: 0.03s;
+  opacity: 0;
+  transform: translateY(10px) scale(0.8);
+}
+.dock.hidden .dock-item:nth-child(6) .icon-background {
+  transition-delay: 0.03s;
+}
+.dock.hidden .dock-item:nth-child(6) image {
+  transition-delay: 0.03s;
+}
+.dock.hidden .dock-item:nth-child(7) {
+  transition-delay: 0.06s;
+  opacity: 0;
+  transform: translateY(10px) scale(0.8);
+}
+.dock.hidden .dock-item:nth-child(7) .icon-background {
+  transition-delay: 0.06s;
+}
+.dock.hidden .dock-item:nth-child(7) image {
+  transition-delay: 0.06s;
+}
+.dock.hidden .dock-item:nth-child(8) {
+  transition-delay: 0.09s;
+  opacity: 0;
+  transform: translateY(10px) scale(0.8);
+}
+.dock.hidden .dock-item:nth-child(8) .icon-background {
+  transition-delay: 0.09s;
+}
+.dock.hidden .dock-item:nth-child(8) image {
+  transition-delay: 0.09s;
+}
+.dock.hidden .dock-item:nth-child(9) {
+  transition-delay: 0.12s;
+  opacity: 0;
+  transform: translateY(10px) scale(0.8);
+}
+.dock.hidden .dock-item:nth-child(9) .icon-background {
+  transition-delay: 0.12s;
+}
+.dock.hidden .dock-item:nth-child(9) image {
+  transition-delay: 0.12s;
+}
+.dock.hidden .dock-item:nth-child(10) {
+  transition-delay: 0.15s;
+  opacity: 0;
+  transform: translateY(10px) scale(0.8);
+}
+.dock.hidden .dock-item:nth-child(10) .icon-background {
+  transition-delay: 0.15s;
+}
+.dock.hidden .dock-item:nth-child(10) image {
+  transition-delay: 0.15s;
+}
+
+@keyframes dock-bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-10px) scale(1.05);
+  }
+  50% {
+    transform: translateY(0) scale(0.98);
+  }
+  75% {
+    transform: translateY(-5px) scale(1.02);
+  }
+}
+.dock-item.launching {
+  animation: dock-bounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* variables & mixins */
+/* general styles */
+box.logout-background {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+box.logout-background .logout-menu {
+  background: linear-gradient(135deg, rgba(198.6008064516, 212.8991935484, 210.5161290323, 0.08), rgba(22.8315789474, 25.3684210526, 24.1, 0.3));
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(184, 202, 199, 0.12);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(184, 202, 199, 0.15), inset 0 1px 0 rgba(184, 202, 199, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+box.logout-background .logout-menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(184, 202, 199, 0.05), transparent);
+  border-radius: 24px 24px 0 0;
+  pointer-events: none;
+}
+box.logout-background .logout-menu button {
+  background: linear-gradient(135deg, rgba(227, 226, 225, 0.12), rgba(227, 226, 225, 0.08));
+  border: 1px solid rgba(227, 226, 225, 0.15);
+  border-radius: 18px;
+  margin: 0.75rem;
+  padding: 1.5rem 2rem;
+  min-width: 180px;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), inset 0 1px 1px rgba(227, 226, 225, 0.18), inset 0 -1px 1px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+box.logout-background .logout-menu button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to bottom, rgba(227, 226, 225, 0.13), transparent);
+  border-radius: 18px 18px 0 0;
+  pointer-events: none;
+  transition: height 0.3s ease;
+}
+box.logout-background .logout-menu button:hover {
+  background: linear-gradient(135deg, rgba(227, 226, 225, 0.16), rgba(227, 226, 225, 0.12));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25), inset 0 1px 2px rgba(227, 226, 225, 0.22), inset 0 -1px 1px rgba(0, 0, 0, 0.2);
+  border-color: rgba(227, 226, 225, 0.2);
+}
+box.logout-background .logout-menu button:hover::before {
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(227, 226, 225, 0.18), transparent);
+}
+box.logout-background .logout-menu button:hover label {
+  transform: scale(1.05);
+}
+box.logout-background .logout-menu button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(227, 226, 225, 0.15), inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+}
+box.logout-background .logout-menu button:focus {
+  background: linear-gradient(135deg, rgba(184, 202, 199, 0.18), rgba(184, 202, 199, 0.12));
+  border-color: rgba(184, 202, 199, 0.25);
+  box-shadow: 0 0 0 3px rgba(184, 202, 199, 0.1), 0 6px 16px rgba(0, 0, 0, 0.25), 0 0 30px rgba(184, 202, 199, 0.25), inset 0 1px 2px rgba(219.0419354839, 228.1580645161, 226.6387096774, 0.25), inset 0 -1px 1px rgba(0, 0, 0, 0.2);
+}
+box.logout-background .logout-menu button:focus::before {
+  background: linear-gradient(to bottom, rgba(213.2016129032, 223.7983870968, 222.0322580645, 0.2), transparent);
+}
+box.logout-background .logout-menu button label {
+  font-family: "Material Symbols Outlined";
+  font-size: 3rem;
+  margin: 0 1rem;
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: normal;
+  font-style: normal;
+}
+
+box.logout-menu button + button {
+  margin-left: 0.5rem;
+}
+
+/* variables & mixins */
+/* general styles */
+box.picker {
+  border-radius: 16px;
+  box-shadow: 0 3px 5px 1px rgba(18, 20, 19, 0.1);
+  background: rgba(18, 20, 19, 0.5);
+  margin: 5px 10px 15px;
+  padding: 0.4rem;
+}
+box.picker box.search {
+  border-radius: calc(16px - 0.4rem - 2px);
+  box-shadow: 0 1px 5px -5px rgba(0, 0, 0, 0.5);
+  background: rgba(56, 57, 57, 0.6);
+  margin: 0.4rem;
+  padding: 0.4rem;
+  margin: 1rem 0.5rem;
+  background-color: rgba(184, 202, 199, 0.15);
+}
+box.picker box.search label {
+  font-family: "Material Symbols Outlined";
+  font-size: 2rem;
+  margin: 0.3rem;
+}
+box.picker box.search entry {
+  font-size: 1.5rem;
+  margin: 0.25rem;
+}
+box.picker box.search entry menu {
+  background: rgb(18, 20, 19);
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+box.picker box.search entry menu separator {
+  background-color: rgba(56, 57, 57, 0.6);
+}
+box.picker box.search entry menu menuitem {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(56, 57, 57, 0.6);
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+box.picker box.search entry menu menuitem:hover {
+  background: rgba(56, 57, 57, 0.99);
+}
+box.picker box.search entry menu menuitem {
+  border-radius: 0;
+  padding: 0.4rem 0.7rem;
+}
+box.picker box.search entry menu menuitem:first-child {
+  border-radius: 8px 8px 0 0;
+}
+box.picker box.search entry menu menuitem:last-child {
+  border-radius: 0 0 8px 8px;
+}
+box.picker box.search entry menu menuitem:only-child {
+  border-radius: 8px;
+}
+box.picker box.results-list {
+  border-radius: calc(16px - 0.4rem - 2px);
+  box-shadow: 0 1px 5px -5px rgba(0, 0, 0, 0.5);
+  background: rgba(56, 57, 57, 0.6);
+  margin: 0.4rem;
+  padding: 0.4rem;
+}
+box.picker box.results-list .app-button .action-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 24px;
+}
+box.picker box.results-list .app-button {
+  padding: 0.4rem;
+}
+box.picker box.results-list .app-button image {
+  -gtk-icon-size: 3rem;
+  margin-right: 0.3rem;
+  margin-left: 0.3rem;
+}
+box.picker box.results-list .app-button label.name {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+box.picker box.results-list .app-button label.description {
+  color: rgba(227, 226, 225, 0.8);
+}
+box.picker box.results-list .app-button:focus, box.picker box.results-list .app-button:hover, box.picker box.results-list .app-button.selected {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(184, 202, 199, 0.2);
+  border: 1px solid rgba(184, 202, 199, 0.3);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+box.picker box.results-list .app-button:focus:hover, box.picker box.results-list .app-button:hover:hover, box.picker box.results-list .app-button.selected:hover {
+  background: rgba(184, 202, 199, 0.3);
+}
+box.picker box.results-list .app-button:focus, box.picker box.results-list .app-button:hover, box.picker box.results-list .app-button.selected {
+  background-color: rgba(184, 202, 199, 0.3);
+  border: transparent;
+}
+box.picker box.results-list .action-button .action-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 24px;
+}
+box.picker box.results-list .action-button {
+  margin-bottom: 0;
+  border-radius: 5rem;
+  padding: 0 0.6rem;
+}
+box.picker box.results-list .action-button:focus, box.picker box.results-list .action-button:hover {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(184, 202, 199, 0.2);
+  border: 1px solid rgba(184, 202, 199, 0.3);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+box.picker box.results-list .action-button:focus:hover, box.picker box.results-list .action-button:hover:hover {
+  background: rgba(184, 202, 199, 0.3);
+}
+box.picker box.results-list .action-button:focus, box.picker box.results-list .action-button:hover {
+  background-color: rgba(184, 202, 199, 0.3);
+  border: transparent;
+  border-radius: 5rem;
+  padding: 0 0.6rem;
+}
+box.picker box.results-grid {
+  border-radius: calc(16px - 0.4rem - 2px);
+  box-shadow: 0 1px 5px -5px rgba(0, 0, 0, 0.5);
+  background: rgba(56, 57, 57, 0.6);
+  margin: 0.4rem;
+  padding: 0.4rem;
+}
+box.picker box.results-grid .wallpaper-thumbnail {
+  border-radius: calc(16px - 0.4rem - 2px);
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  padding: 0.5rem;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+box.picker box.results-grid .wallpaper-thumbnail:hover, box.picker box.results-grid .wallpaper-thumbnail:focus, box.picker box.results-grid .wallpaper-thumbnail.selected {
+  background-color: rgba(227, 226, 225, 0.1);
+  border-color: rgba(227, 226, 225, 0.3);
+}
+box.picker box.results-grid .wallpaper-thumbnail box.wallpaper-preview-container {
+  border-radius: calc(16px - 0.4rem - 2px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  min-width: 140px;
+  min-height: 100px;
+  background-color: rgba(227, 226, 225, 0.1);
+}
+box.picker box.results-grid .wallpaper-thumbnail .wallpaper-picture {
+  border-radius: calc(16px - 0.4rem - 2px);
+}
+box.picker box.results-grid .wallpaper-thumbnail box.wallpaper-placeholder {
+  border-radius: calc(16px - 0.4rem - 2px);
+  background-color: rgba(255, 255, 255, 0.1);
+  min-width: 140px;
+  min-height: 100px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+box.picker box.results-grid .wallpaper-thumbnail .wallpaper-name {
+  color: rgba(227, 226, 225, 0.9);
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+box.picker box.results-grid box.wallpaper-content {
+  padding: 0.5rem;
+}
+box.picker box.results-grid box.wallpaper-row {
+  margin-bottom: 0.5rem;
+}
+box.picker box.not-found {
+  padding: 1rem;
+}
+box.picker box.not-found image {
+  -gtk-icon-size: 6rem;
+  color: rgba(227, 226, 225, 0.7);
+}
+box.picker box.not-found label {
+  color: rgba(227, 226, 225, 0.9);
+  font-size: 1.2em;
+}
+
+.mode-bar {
+  padding: 8px;
+}
+.mode-bar .mode-button {
+  border-radius: calc(16px - 0.4rem - 2px);
+  padding: 6px 12px;
+  transition: all 0.2s ease;
+}
+.mode-bar .mode-button .mode-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 24px;
+}
+.mode-bar .mode-button:hover, .mode-bar .mode-button:focus, .mode-bar .mode-button.active {
+  border-radius: calc(16px - 0.4rem - 2px);
+  background-color: rgba(184, 202, 199, 0.15);
+  border: transparent;
+  padding: 6px 12px;
+  transition: all 0.2s ease;
+}
+
+.action-bar {
+  padding: 0.4rem;
+}
+.action-bar .action-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 24px;
+}
+.action-bar .action-button {
+  border-radius: 5rem;
+  padding: 0.2rem 0.4rem;
+}
+.action-bar .action-button:focus, .action-bar .action-button:hover {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(184, 202, 199, 0.2);
+  border: 1px solid rgba(184, 202, 199, 0.3);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+.action-bar .action-button:focus:hover, .action-bar .action-button:hover:hover {
+  background: rgba(184, 202, 199, 0.3);
+}
+.action-bar .action-button:focus, .action-bar .action-button:hover {
+  background-color: rgba(184, 202, 199, 0.3);
+  border: transparent;
+  border-radius: 5rem;
+  padding: 0.2rem 0.4rem;
+}
+
+.command-suggestions {
+  border-radius: calc(16px - 0.4rem - 2px);
+  box-shadow: 0 1px 5px -5px rgba(0, 0, 0, 0.5);
+  background: rgba(56, 57, 57, 0.6);
+  margin: 0.4rem;
+  padding: 0.4rem;
+}
+.command-suggestions .command-item {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  padding: 0.4rem;
+}
+.command-suggestions .command-item .command-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 3rem;
+  color: rgba(227, 226, 225, 0.8);
+  margin-right: 0.3rem;
+  margin-left: 0.3rem;
+}
+.command-suggestions .command-item .command-name {
+  font-weight: bold;
+  color: rgb(184, 202, 199);
+  font-size: 1.1rem;
+}
+.command-suggestions .command-item .command-description {
+  color: rgba(227, 226, 225, 0.8);
+}
+.command-suggestions .command-item:hover, .command-suggestions .command-item:focus {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(184, 202, 199, 0.2);
+  border: 1px solid rgba(184, 202, 199, 0.3);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+.command-suggestions .command-item:hover:hover, .command-suggestions .command-item:focus:hover {
+  background: rgba(184, 202, 199, 0.3);
+}
+.command-suggestions .command-item:hover, .command-suggestions .command-item:focus {
+  background-color: rgba(184, 202, 199, 0.3);
+  border: transparent;
+}
+
+/* variables & mixins */
+/* general styles */
+.notification {
+  border-radius: 16px;
+  box-shadow: 0 3px 5px 1px rgba(18, 20, 19, 0.1);
+  background: rgba(18, 20, 19, 0.5);
+  margin: 5px 10px 15px;
+  padding: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0.4rem 0.75rem;
+  padding: 0.4rem;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.notification.notification-hovered {
+  margin-left: calc(0.75rem - 4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.notification:active {
+  opacity: 0.8;
+}
+.notification.critical {
+  border-left: 3px solid #d17678;
+}
+.notification.critical .header .app-name {
+  color: #d17678;
+}
+.notification.low {
+  opacity: 0.9;
+}
+.notification .header {
+  margin-bottom: 0.25rem;
+}
+.notification .header .app-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(227, 226, 225, 0.6);
+}
+.notification .header .time {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(227, 226, 225, 0.5);
+}
+.notification .content .thumb > box {
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 8px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.notification .content .thumb image {
+  -gtk-icon-size: 48px;
+}
+.notification .content .text-content .title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgb(227, 226, 225);
+  line-height: 1.3;
+}
+.notification .content .text-content .body {
+  font-size: 0.85rem;
+  color: rgba(227, 226, 225, 0.7);
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+.notification .action-indicator {
+  margin-top: 0.4rem;
+  padding-top: 0.25rem;
+  border-top: 1px solid rgba(227, 226, 225, 0.1);
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+}
+.notification .action-indicator.visible {
+  opacity: 1;
+}
+.notification .action-indicator .action-hint {
+  font-size: 0.75rem;
+  color: rgba(227, 226, 225, 0.6);
+  font-style: italic;
+}
+.notification .action-indicator .more-actions {
+  font-size: 0.7rem;
+  color: rgba(227, 226, 225, 0.5);
+  background: rgba(227, 226, 225, 0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* variables & mixins */
+/* general styles */
+.osd {
+  border-radius: 16px;
+  box-shadow: 0 3px 5px 1px rgba(18, 20, 19, 0.1);
+  background: rgba(18, 20, 19, 0.5);
+  margin: 5px 10px 15px;
+  padding: 0.4rem;
+  border-radius: 3rem;
+  box-shadow: none;
+  margin: 5rem;
+  padding: 1rem;
+}
+.osd image {
+  -gtk-icon-size: 4rem;
+  margin: 0.5rem;
+}
+.osd box {
+  margin: 0.5rem;
+}
+.osd label {
+  margin: 0 0 0.5rem;
+}
+.osd levelbar trough {
+  margin: 0.5rem 0.5rem;
+}
+.osd levelbar block {
+  min-height: 1rem;
+}
+.osd levelbar block.filled {
+  border-radius: 1.5rem;
+  background-color: rgb(227, 226, 225);
+}
+
+/* variables & mixins */
+/* general styles */
+.music.window {
+  border-radius: 16px;
+  box-shadow: 0 3px 5px 1px rgba(18, 20, 19, 0.1);
+  background: rgba(18, 20, 19, 0.5);
+  margin: 5px 10px 15px;
+  padding: 0.4rem;
+  background: none;
+  padding: 0rem;
+  margin-top: 0.75rem;
+  border: 1px solid rgba(18, 20, 19, 0.5);
+  border-radius: 16px;
+}
+.music.window .cover {
+  border-radius: 16px;
+  box-shadow: 0 1px 2px -1px rgba(18, 20, 19, 0.5);
+  margin: 0.4rem;
+  min-height: 13rem;
+  min-width: 13rem;
+  -gtk-icon-size: 13rem;
+  opacity: 0.9;
+}
+.music.window .blurred-cover {
+  border-radius: 8px;
+  opacity: 0.8;
+}
+.music.window .cava-container cava {
+  opacity: 0.2;
+}
+
+.music.window .info {
+  margin: 0.75rem;
+}
+.music.window .info label,
+.music.window .info scale {
+  margin: 0.3rem 0;
+}
+.music.window .info label.position,
+.music.window .info label.length {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+.music.window .info scale {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.music.window .info .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  min-width: 14rem;
+}
+
+.music.window .controls button {
+  margin: 0 1.6rem;
+  -gtk-icon-size: 1.5rem;
+}
+
+.music.window .player-info {
+  margin-bottom: 0;
+}
+.music.window .player-info .player-icon {
+  -gtk-icon-size: 1.1rem;
+}
+
+/* variables & mixins */
+/* general styles */
+.ScreenCorners {
+  background-color: transparent;
+}
+.ScreenCorners .corner-content {
+  background-color: transparent;
+}
+.ScreenCorners.corner-top .corner-content {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-shadow: 0 0 0 99px rgba(18, 20, 19, 0.5), inset 0 10px 10px -10px rgba(0, 0, 0, 0.2);
+  min-height: max(12px, 8px * 8);
+}
+.ScreenCorners.corner-bottom .corner-content {
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  box-shadow: 0 0 0 99px rgba(18, 20, 19, 0.5), inset 0 -10px 10px -10px rgba(0, 0, 0, 0.2);
+  min-height: max(12px, 8px * 8);
+}
+.ScreenCorners.corner-left .corner-content {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  box-shadow: 0 0 0 99px rgba(18, 20, 19, 0.5), inset 10px 0 10px -10px rgba(0, 0, 0, 0.2);
+  min-width: calc(8px * 8);
+}
+.ScreenCorners.corner-right .corner-content {
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  box-shadow: 0 0 0 99px rgba(18, 20, 19, 0.5), inset -10px 0 10px -10px rgba(0, 0, 0, 0.2);
+  min-width: calc(8px * 8);
+}
+
+/* variables & mixins */
+/* general styles */
+.quick-actions-widget {
+  border-radius: calc(8px * 3);
+  padding: 0.75rem;
+  margin: 0.75rem;
+}
+.quick-actions-widget .actions-grid {
+  margin: 0.4rem 0;
+}
+.quick-actions-widget .actions-grid .action-button {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(56, 57, 57, 0.6);
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+.quick-actions-widget .actions-grid .action-button:hover {
+  background: rgba(56, 57, 57, 0.99);
+}
+.quick-actions-widget .actions-grid .action-button {
+  background: transparent;
+  border-radius: 1.65rem;
+  margin: 0 0.4rem;
+}
+.quick-actions-widget .actions-grid .action-button:hover {
+  background: rgba(184, 202, 199, 0.2);
+  border: 1px solid rgba(184, 202, 199, 0.3);
+  transform: translateY(-2px);
+}
+.quick-actions-widget .actions-grid .action-button .action-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 24px;
+}
+
+.clock-widget {
+  margin-top: 12px;
+}
+.clock-widget .digit-stack {
+  min-width: 1.2em;
+}
+.clock-widget .digit-stack label {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 2.2rem;
+  font-weight: bold;
+  transition: all 200ms ease;
+}
+.clock-widget .colon {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 0 2px;
+  opacity: 0.8;
+  transition: opacity 200ms ease;
+  animation: pulse-colon 2s ease-in-out infinite;
+}
+.clock-widget .ampm-indicator {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-left: 8px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  opacity: 0.85;
+  transition: all 200ms ease;
+}
+.clock-widget .ampm-indicator:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.clock-widget .date-label {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 0.95rem;
+  font-weight: 500;
+  opacity: 0.7;
+  margin-top: 4px;
+  transition: opacity 200ms ease;
+}
+.clock-widget .date-label:hover {
+  opacity: 0.9;
+}
+
+.clock-divider {
+  min-height: 2px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  margin: 8px 0;
+  border-radius: 1px;
+  transition: all 200ms ease;
+}
+
+@keyframes pulse-colon {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.65;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .clock-widget .digit-stack label,
+  .clock-widget .colon {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+  .clock-widget .ampm-indicator {
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+/* variables & mixins */
+/* general styles */
+.matshell-settings {
+  border-radius: 16px;
+  box-shadow: 0 3px 5px 1px rgba(18, 20, 19, 0.1);
+  background: rgba(18, 20, 19, 0.5);
+  margin: 5px 10px 15px;
+  padding: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: calc(8px * 3);
+  padding: 0.75rem;
+  margin: 0.75rem;
+  padding: 0;
+  border-radius: calc(8px * 2);
+  background-color: rgba(20.4157894737, 22.6842105263, 21.55, 0.5);
+  overflow: hidden;
+}
+
+.settings-header-compact {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0.75rem 0.4rem 0.75rem;
+  border-bottom: 1px solid rgba(227, 226, 225, 0.08);
+  background-color: rgba(20.4157894737, 22.6842105263, 21.55, 0.5);
+  border-top-left-radius: calc(8px * 2);
+  border-top-right-radius: calc(8px * 2);
+  overflow: hidden;
+}
+.settings-header-compact .settings-title-compact {
+  font-size: calc(1.1rem * 1.1);
+  font-weight: 700;
+  color: rgb(227, 226, 225);
+  margin-right: auto;
+}
+
+.settings-nav-compact {
+  display: flex;
+  gap: 0.25rem;
+}
+.settings-nav-compact .nav-icon-button {
+  padding: 0.25rem calc(0.4rem * 1.2);
+  border-radius: calc(8px * 1.5);
+  background-color: transparent;
+  border: none;
+  transition: all 150ms ease;
+  min-width: 36px;
+}
+.settings-nav-compact .nav-icon-button .icon-compact {
+  font-family: "Material Symbols Outlined";
+  font-size: 24px;
+  font-size: calc(1.1rem * 1.3);
+  color: rgba(227, 226, 225, 0.5);
+  transition: color 150ms ease;
+}
+.settings-nav-compact .nav-icon-button:hover {
+  background-color: rgba(227, 226, 225, 0.06);
+}
+.settings-nav-compact .nav-icon-button:hover .icon-compact {
+  color: rgba(227, 226, 225, 0.8);
+}
+.settings-nav-compact .nav-icon-button.active {
+  background-color: rgba(184, 202, 199, 0.12);
+}
+.settings-nav-compact .nav-icon-button.active .icon-compact {
+  color: rgb(184, 202, 199);
+}
+
+.settings-content {
+  padding: 0.75rem;
+  min-height: 280px;
+}
+
+.section-header {
+  font-size: calc(1.1rem * 0.85);
+  font-weight: 600;
+  color: rgba(227, 226, 225, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0.75rem 0 0.25rem 0;
+}
+.section-header:first-child {
+  margin-top: 0;
+}
+
+.option-row {
+  background-color: rgba(22.8315789474, 25.3684210526, 24.1, 0.5);
+  border: 1px solid rgba(227, 226, 225, 0.08);
+  border-radius: calc(8px * 1.5);
+  padding: calc(0.4rem * 1.2) 0.75rem;
+  margin: 0.25rem 0;
+  transition: all 150ms ease;
+}
+.option-row:hover {
+  background-color: rgba(25.2473684211, 28.0526315789, 26.65, 0.5);
+  border-color: rgba(227, 226, 225, 0.12);
+}
+.option-row .option-label {
+  font-size: calc(1.1rem * 0.95);
+  font-weight: 500;
+  color: rgb(227, 226, 225);
+}
+
+.option-switch {
+  width: 44px;
+  height: 24px;
+  min-width: 44px;
+  min-height: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  -gtk-outline-radius: 12px;
+  background-color: rgba(227, 226, 225, 0.12);
+  transition: background-color 200ms ease;
+}
+.option-switch slider {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 10px;
+  margin: 2px;
+  margin-left: 2px;
+  margin-right: 22px;
+  background-color: rgba(37.3263157895, 41.4736842105, 39.4, 0.5);
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  -gtk-outline-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+.option-switch:checked {
+  background-color: rgb(184, 202, 199);
+}
+.option-switch:checked slider {
+  background-color: white;
+  margin-left: 22px;
+  margin-right: 2px;
+}
+.option-switch:hover {
+  background-color: rgba(227, 226, 225, 0.15);
+}
+.option-switch:hover:checked {
+  background-color: rgb(198.6008064516, 212.8991935484, 210.5161290323);
+}
+
+.option-dropdown {
+  min-width: 130px;
+}
+.option-dropdown button {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(184, 202, 199, 0.2);
+  border: 1px solid rgba(184, 202, 199, 0.3);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+.option-dropdown button:hover {
+  background: rgba(184, 202, 199, 0.3);
+}
+.option-dropdown button {
+  border-radius: calc(8px * 1.2);
+  padding: 0.25rem calc(0.4rem * 1.2);
+  border: 1px solid rgba(227, 226, 225, 0.08);
+  font-size: calc(1.1rem * 0.95);
+  transition: all 150ms ease;
+}
+.option-dropdown button:hover {
+  border-color: rgba(227, 226, 225, 0.15);
+  background-color: rgba(25.2473684211, 28.0526315789, 26.65, 0.5);
+}
+
+.info-box {
+  padding: calc(0.4rem * 1.2) 0.75rem;
+  border-radius: calc(8px * 1.2);
+  background-color: rgba(184, 202, 199, 0.06);
+  border-left: 3px solid rgba(184, 202, 199, 0.4);
+  margin-top: 0.4rem;
+}
+.info-box .info-text {
+  font-size: calc(1.1rem * 0.85);
+  color: rgba(227, 226, 225, 0.7);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+separator {
+  background-color: rgba(227, 226, 225, 0.08);
+  margin: 0.75rem 0;
+  min-height: 1px;
+}
+
+/* variables & mixins */
+/* general styles */
+.weather-widget {
+  border-radius: 16px;
+  box-shadow: 0 3px 5px 1px rgba(18, 20, 19, 0.1);
+  background: rgba(18, 20, 19, 0.5);
+  margin: 5px 10px 15px;
+  padding: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: calc(8px * 3);
+  padding: 0.75rem;
+  margin: 0.75rem;
+  padding: 0.75rem;
+  border-radius: calc(8px * 2);
+  background-color: rgba(22.8315789474, 25.3684210526, 24.1, 0.5);
+  /** ---------- Location Header ---------- **/
+}
+.weather-widget .weather-location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  color: rgb(227, 226, 225);
+}
+.weather-widget .weather-location .location-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 20px;
+  margin-right: 0.25rem;
+  color: rgba(227, 226, 225, 0.7);
+}
+.weather-widget .weather-location .location-text {
+  font-size: calc(1.1rem * 0.95);
+  font-weight: 500;
+  color: rgb(227, 226, 225);
+  text-align: center;
+}
+.weather-widget {
+  /** ---------- Current Weather ---------- **/
+}
+.weather-widget .current-weather {
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(227, 226, 225, 0.08);
+  margin-bottom: 0.75rem;
+}
+.weather-widget .current-weather .current-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 72px;
+  min-width: 72px;
+  min-height: 72px;
+  color: rgb(227, 226, 225);
+  margin-bottom: 0.4rem;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+.weather-widget .current-weather .weather-temp {
+  font-size: calc(1.1rem * 1.4);
+  font-weight: 700;
+  color: rgb(227, 226, 225);
+  margin-bottom: 0.25rem;
+}
+.weather-widget .current-weather .weather-desc {
+  font-size: calc(1.1rem * 0.95);
+  color: rgba(227, 226, 225, 0.6);
+  margin-bottom: 0.25rem;
+}
+.weather-widget .current-weather {
+  /** ---------- Weather Stats ---------- **/
+}
+.weather-widget .current-weather .weather-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.weather-widget .current-weather .weather-stats .stat-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+}
+.weather-widget .current-weather .weather-stats .stat-item .weather-extra-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 20px;
+  color: rgba(227, 226, 225, 0.5);
+  margin-right: 0.4rem;
+}
+.weather-widget .current-weather .weather-stats .stat-item label {
+  font-size: calc(1.1rem * 0.9);
+  color: rgba(227, 226, 225, 0.5);
+}
+.weather-widget {
+  /** ---------- Forecast Section ---------- **/
+}
+.weather-widget .forecast-row {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+}
+.weather-widget .forecast-row .forecast-item {
+  min-width: 3.2rem;
+  padding: 0.25rem;
+  border-radius: calc(8px * 1.2);
+  transition: background-color 120ms ease;
+}
+.weather-widget .forecast-row .forecast-item:hover {
+  background-color: rgba(25.2473684211, 28.0526315789, 26.65, 0.5);
+}
+.weather-widget .forecast-row .forecast-item .forecast-hour {
+  font-size: calc(1.1rem * 0.85);
+  color: rgba(227, 226, 225, 0.6);
+  margin-bottom: 0.25rem;
+}
+.weather-widget .forecast-row .forecast-item .forecast-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 28px;
+  margin: 0.25rem 0;
+  color: rgb(227, 226, 225);
+}
+.weather-widget .forecast-row .forecast-item .forecast-temp {
+  font-size: calc(1.1rem * 0.95);
+  font-weight: 500;
+  color: rgb(227, 226, 225);
+}
+
+/* variables & mixins */
+/* general styles */
+.base-widget {
+  border-radius: 16px;
+  box-shadow: 0 3px 5px 1px rgba(18, 20, 19, 0.1);
+  background: rgba(18, 20, 19, 0.5);
+  margin: 5px 10px 15px;
+  padding: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: calc(8px * 3);
+  padding: 0.75rem;
+  margin: 0.75rem;
+  /* Generic "header/content" row */
+}
+.base-widget .header-row {
+  margin-bottom: 0.4rem;
+}
+.base-widget .header-row .header-icon {
+  min-width: 72px;
+  min-height: 72px;
+  color: rgb(227, 226, 225);
+  margin-bottom: 0.5rem;
+}
+.base-widget .header-row .header-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+.base-widget .header-row .header-subtitle {
+  font-size: 1.1rem;
+  color: rgb(145, 145, 144);
+  margin-bottom: 0.2rem;
+}
+.base-widget .header-row .header-extra {
+  font-size: 1.1rem;
+  color: rgb(145, 145, 144);
+}
+.base-widget {
+  /* Generic "items row" for children */
+}
+.base-widget .items-row {
+  margin-top: 0.4rem;
+}
+.base-widget .items-row .item {
+  min-width: 3rem;
+}
+.base-widget .items-row .item .item-title {
+  font-size: 1.1rem;
+  color: rgb(145, 145, 144);
+}
+.base-widget .items-row .item .item-icon {
+  margin: 0.3rem 0;
+  color: rgb(227, 226, 225);
+}
+.base-widget .items-row .item .item-value {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgb(227, 226, 225);
+}
+
+/* variables & mixins */
+/* general styles */
+.mode-selector {
+  padding: 0.25rem 0.75rem;
+  margin: 0 0.4rem;
+}
+.mode-selector .mode-button {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(56, 57, 57, 0.6);
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+.mode-selector .mode-button:hover {
+  background: rgba(56, 57, 57, 0.99);
+}
+.mode-selector .mode-button {
+  background: transparent;
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  border-radius: calc(8px * 2);
+  padding: 0.4rem 0.25rem;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mode-selector .mode-button:hover {
+  background: rgba(25.2473684211, 28.0526315789, 26.65, 0.5);
+  border-color: rgba(227, 226, 225, 0.3);
+  transform: translateY(-1px);
+}
+.mode-selector .mode-button.mode-button-active {
+  background: rgba(184, 202, 199, 0.2);
+  border-color: rgb(184, 202, 199);
+}
+.mode-selector .mode-button.mode-button-active .mode-icon {
+  color: rgb(227.8024193548, 234.6975806452, 233.5483870968);
+}
+.mode-selector .mode-button.mode-button-active .mode-label {
+  color: rgb(227.8024193548, 234.6975806452, 233.5483870968);
+  font-weight: 600;
+}
+.mode-selector .mode-button .mode-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 24px;
+  font-size: 20px;
+  color: rgb(227, 226, 225);
+  transition: color 200ms ease;
+}
+.mode-selector .mode-button .mode-label {
+  font-size: calc(1.1rem * 0.85);
+  font-weight: 500;
+  color: rgb(227, 226, 225);
+  transition: all 200ms ease;
+}
+
+.mode-stack > box {
+  padding: 0 0.4rem;
+}
+
+/* variables & mixins */
+/* general styles */
+.timer-widget {
+  border-radius: 16px;
+  box-shadow: 0 3px 5px 1px rgba(18, 20, 19, 0.1);
+  background: rgba(18, 20, 19, 0.5);
+  margin: 5px 10px 15px;
+  padding: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: calc(8px * 3);
+  padding: 0.75rem;
+  margin: 0.75rem;
+  padding: 0.75rem;
+  border-radius: calc(8px * 2);
+  background-color: rgba(20.4157894737, 22.6842105263, 21.55, 0.5);
+}
+.timer-widget .widget-header {
+  margin: 0 0.4rem 0.4rem 0.4rem;
+  display: flex;
+  align-items: center;
+}
+.timer-widget .widget-header .header-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 24px;
+  color: rgb(184, 202, 199);
+  margin-right: 0.25rem;
+}
+.timer-widget .widget-header .header-title {
+  font-size: calc(1.1rem * 1.1);
+  font-weight: 700;
+  color: rgb(227, 226, 225);
+}
+.timer-widget .timer-add-button {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(56, 57, 57, 0.6);
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+.timer-widget .timer-add-button:hover {
+  background: rgba(56, 57, 57, 0.99);
+}
+.timer-widget .timer-add-button {
+  background: rgba(184, 202, 199, 0.2);
+  border-radius: 16px;
+  padding: 0.4rem 0.75rem;
+  margin: 0;
+  border: 1px solid rgba(184, 202, 199, 0.7);
+}
+.timer-widget .timer-add-button:hover {
+  background: rgba(198.6008064516, 212.8991935484, 210.5161290323, 0.2);
+}
+.timer-widget .timer-add-button .timer-add-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 20px;
+  color: rgb(184, 202, 199);
+}
+.timer-widget .timer-dialog {
+  background: rgba(25.2473684211, 28.0526315789, 26.65, 0.5);
+  border: 1px solid rgba(227, 226, 225, 0.15);
+  border-radius: calc(8px * 2);
+  padding: 0.75rem;
+  margin: 0;
+}
+.timer-widget .timer-dialog .dialog-title {
+  font-size: calc(1.1rem * 1.05);
+  font-weight: 600;
+  color: rgb(227, 226, 225);
+  margin-bottom: 0.4rem;
+}
+.timer-widget .timer-dialog .time-picker-container {
+  margin: 0.4rem 0;
+}
+.timer-widget .timer-dialog .time-picker-label {
+  font-size: calc(1.1rem * 0.85);
+  font-weight: 500;
+  color: rgba(227, 226, 225, 0.6);
+  text-transform: lowercase;
+  margin-bottom: 0.25rem;
+}
+.timer-widget .timer-dialog .time-picker-scroll {
+  background: rgba(13.1684210526, 14.6315789474, 13.9, 0.5);
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  border-radius: calc(8px * 1.5);
+}
+.timer-widget .timer-dialog .time-picker-scroll scrollbar {
+  background: transparent;
+  border-radius: calc(8px * 1);
+  min-width: 4px;
+}
+.timer-widget .timer-dialog .time-picker-scroll scrollbar trough {
+  background: rgba(227, 226, 225, 0.05);
+  border-radius: calc(8px * 1);
+  min-width: 4px;
+}
+.timer-widget .timer-dialog .time-picker-scroll scrollbar slider {
+  background: rgba(227, 226, 225, 0.3);
+  border-radius: calc(8px * 1);
+  min-width: 4px;
+  transition: all 100ms ease;
+}
+.timer-widget .timer-dialog .time-picker-scroll scrollbar slider:hover {
+  background: rgba(184, 202, 199, 0.5);
+}
+.timer-widget .timer-dialog .time-picker-item {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(56, 57, 57, 0.6);
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+.timer-widget .timer-dialog .time-picker-item:hover {
+  background: rgba(56, 57, 57, 0.99);
+}
+.timer-widget .timer-dialog .time-picker-item {
+  background: transparent;
+  border: none;
+  padding: 0.25rem 0.4rem;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: calc(1.1rem * 1.1);
+  color: rgba(227, 226, 225, 0.6);
+  transition: all 150ms ease;
+}
+.timer-widget .timer-dialog .time-picker-item:hover {
+  background: rgba(227, 226, 225, 0.05);
+  color: rgb(227, 226, 225);
+}
+.timer-widget .timer-dialog .time-picker-item-active {
+  background: rgba(184, 202, 199, 0.2);
+  color: rgb(184, 202, 199);
+  font-weight: 700;
+  font-size: calc(1.1rem * 1.3);
+}
+.timer-widget .timer-dialog .time-picker-item-active:hover {
+  background: rgba(184, 202, 199, 0.2);
+}
+.timer-widget .timer-dialog .dialog-button {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(56, 57, 57, 0.6);
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+.timer-widget .timer-dialog .dialog-button:hover {
+  background: rgba(56, 57, 57, 0.99);
+}
+.timer-widget .timer-dialog .dialog-button {
+  border-radius: calc(8px * 1.5);
+  padding: 0.25rem 0.4rem;
+  font-size: calc(1.1rem * 0.9);
+}
+.timer-widget .timer-dialog .dialog-button-cancel {
+  background: transparent;
+  border: 1px solid rgba(227, 226, 225, 0.15);
+}
+.timer-widget .timer-dialog .dialog-button-cancel:hover {
+  background: rgba(56, 57, 57, 0.99);
+}
+.timer-widget .timer-dialog .dialog-button-confirm {
+  background: rgba(184, 202, 199, 0.2);
+  border: 1px solid rgba(184, 202, 199, 0.7);
+  color: rgb(184, 202, 199);
+  font-weight: 600;
+}
+.timer-widget .timer-dialog .dialog-button-confirm:hover {
+  background: rgba(198.6008064516, 212.8991935484, 210.5161290323, 0.2);
+}
+.timer-widget .timer-list {
+  margin-top: 0.25rem;
+}
+.timer-widget .timer-empty {
+  padding: 0.75rem 0;
+  text-align: center;
+}
+.timer-widget .timer-empty .empty-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 64px;
+  color: rgba(227, 226, 225, 0.4);
+  margin-bottom: 0.4rem;
+}
+.timer-widget .timer-empty .empty-text {
+  font-size: 1.1rem;
+  color: rgba(227, 226, 225, 0.6);
+}
+.timer-widget .timer-item {
+  background: rgba(22.8315789474, 25.3684210526, 24.1, 0.5);
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  border-radius: calc(8px * 2);
+  padding: 0.4rem 0.75rem;
+  margin: 0.25rem 0;
+}
+.timer-widget .timer-item .timer-time {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: calc(1.1rem * 1.5);
+  font-weight: 500;
+  color: rgba(227, 226, 225, 0.6);
+  transition: color 200ms ease;
+}
+.timer-widget .timer-item .timer-active {
+  color: rgb(184, 202, 199);
+  font-weight: 700;
+}
+.timer-widget .timer-item .timer-button {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(56, 57, 57, 0.6);
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+.timer-widget .timer-item .timer-button:hover {
+  background: rgba(56, 57, 57, 0.99);
+}
+.timer-widget .timer-item .timer-button {
+  background: transparent;
+  border: 1px solid rgba(227, 226, 225, 0.15);
+  border-radius: calc(8px * 1.5);
+  padding: 0.25rem;
+  min-width: 36px;
+  min-height: 36px;
+}
+.timer-widget .timer-item .timer-button:hover {
+  background: rgba(56, 57, 57, 0.99);
+}
+.timer-widget .timer-item .timer-button-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 18px;
+}
+.timer-widget .timer-item .timer-button-start {
+  border-color: rgba(184, 202, 199, 0.5);
+}
+.timer-widget .timer-item .timer-button-start .timer-button-icon {
+  color: rgb(184, 202, 199);
+}
+.timer-widget .timer-item .timer-button-start:hover {
+  background: rgba(184, 202, 199, 0);
+}
+.timer-widget .timer-item .timer-button-stop {
+  border-color: rgba(184, 202, 199, 0.5);
+}
+.timer-widget .timer-item .timer-button-stop .timer-button-icon {
+  color: rgb(184, 202, 199);
+}
+.timer-widget .timer-item .timer-button-stop:hover {
+  background: rgba(184, 202, 199, 0.1);
+}
+.timer-widget .timer-item .timer-button-reset:hover {
+  background: rgba(56, 57, 57, 0.99);
+}
+.timer-widget .timer-item .timer-button-delete {
+  border-color: rgba(255, 180, 171, 0.3);
+}
+.timer-widget .timer-item .timer-button-delete .timer-button-icon {
+  color: rgb(255, 180, 171);
+}
+.timer-widget .timer-item .timer-button-delete:hover {
+  background: rgba(255, 180, 171, 0.1);
+}
+.timer-widget .timer-item .timer-progress-container {
+  background: rgba(227, 226, 225, 0.05);
+  border-radius: calc(8px * 1);
+  margin-top: 0.25rem;
+}
+.timer-widget .timer-item .timer-progress-bar {
+  background: linear-gradient(90deg, rgb(184, 202, 199), rgb(213.2016129032, 223.7983870968, 222.0322580645));
+  border-radius: calc(8px * 1);
+  transition: width 1000ms linear;
+}
+.timer-widget separator {
+  background-color: rgba(227, 226, 225, 0.15);
+  margin: 0.75rem 0;
+  min-height: 1px;
+}
+
+/* variables & mixins */
+/* general styles */
+.updater-widget {
+  border-radius: 16px;
+  box-shadow: 0 3px 5px 1px rgba(18, 20, 19, 0.1);
+  background: rgba(18, 20, 19, 0.5);
+  margin: 5px 10px 15px;
+  padding: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: calc(8px * 3);
+  padding: 0.75rem;
+  margin: 0.75rem;
+  padding: 0;
+  border-radius: calc(8px * 2);
+  background-color: rgba(20.4157894737, 22.6842105263, 21.55, 0.5);
+  overflow: hidden;
+  /* ---------- Header ---------- */
+}
+.updater-widget .updater-header {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0.75rem 0.4rem 0.75rem;
+  border-bottom: 1px solid rgba(227, 226, 225, 0.08);
+  background-color: rgba(20.4157894737, 22.6842105263, 21.55, 0.5);
+  border-top-left-radius: calc(8px * 2);
+  border-top-right-radius: calc(8px * 2);
+  overflow: hidden;
+}
+.updater-widget .updater-header .header-title {
+  font-size: calc(1.1rem * 1.1);
+  font-weight: 700;
+  color: rgb(227, 226, 225);
+  margin-right: auto;
+}
+.updater-widget .updater-header .updater-nav {
+  display: flex;
+  gap: 0.25rem;
+}
+.updater-widget .updater-header .updater-nav .nav-mode-button {
+  padding: 0.25rem calc(0.4rem * 1.2);
+  border-radius: calc(8px * 1.5);
+  background-color: transparent;
+  border: none;
+  transition: all 150ms ease;
+  min-width: 36px;
+  font-size: calc(1.1rem * 0.85);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.updater-widget .updater-header .updater-nav .nav-mode-button:hover {
+  background-color: rgba(227, 226, 225, 0.06);
+}
+.updater-widget .updater-header .updater-nav .nav-mode-button.active {
+  background-color: rgba(184, 202, 199, 0.12);
+  color: rgb(184, 202, 199);
+  font-weight: 600;
+}
+.updater-widget .updater-header .updater-nav .nav-mode-button .icon-compact {
+  font-family: "Material Symbols Outlined";
+  font-size: 24px;
+  font-size: calc(1.1rem * 1.15);
+}
+.updater-widget {
+  /* ---------- Separator element (Gtk.Separator) ---------- */
+}
+.updater-widget separator {
+  background-color: rgba(227, 226, 225, 0.08);
+  margin: 0.75rem 0;
+  min-height: 1px;
+}
+.updater-widget {
+  /* ---------- Content ---------- */
+}
+.updater-widget .updater-content {
+  padding: 0.75rem;
+}
+.updater-widget {
+  /* ---------- Version info ---------- */
+}
+.updater-widget .version-info {
+  background-color: rgba(22.8315789474, 25.3684210526, 24.1, 0.5);
+  border: 1px solid rgba(227, 226, 225, 0.08);
+  border-radius: calc(8px * 1.5);
+  padding: 0.4rem 0.75rem;
+  margin-bottom: 0.4rem;
+  transition: all 150ms ease;
+}
+.updater-widget .version-info:hover {
+  background-color: rgba(25.2473684211, 28.0526315789, 26.65, 0.5);
+  border-color: rgba(227, 226, 225, 0.12);
+}
+.updater-widget .version-info .version-label {
+  font-size: calc(1.1rem * 0.9);
+  font-weight: 600;
+  color: rgba(227, 226, 225, 0.6);
+  min-width: 70px;
+}
+.updater-widget .version-info .version-value {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: calc(1.1rem * 0.9);
+  font-weight: 500;
+  color: rgb(227, 226, 225);
+}
+.updater-widget {
+  /* ---------- Status box ---------- */
+}
+.updater-widget .status-box {
+  background-color: rgba(22.8315789474, 25.3684210526, 24.1, 0.5);
+  border: 1px solid rgba(227, 226, 225, 0.08);
+  border-radius: calc(8px * 1.5);
+  padding: 0.4rem 0.75rem;
+  transition: all 150ms ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+.updater-widget .status-box .status-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 20px;
+}
+.updater-widget .status-box .status-message {
+  font-size: calc(1.1rem * 0.9);
+  font-weight: 500;
+  color: rgba(227, 226, 225, 0.7);
+}
+.updater-widget .status-box.status-idle .status-icon {
+  color: rgba(227, 226, 225, 0.6);
+}
+.updater-widget .status-box.status-idle .status-message {
+  color: rgba(227, 226, 225, 0.7);
+}
+.updater-widget .status-box.status-checking, .updater-widget .status-box.status-cloning, .updater-widget .status-box.status-copying, .updater-widget .status-box.status-installing {
+  border-color: rgba(184, 202, 199, 0.2);
+  background-color: rgba(184, 202, 199, 0.06);
+}
+.updater-widget .status-box.status-checking .status-icon, .updater-widget .status-box.status-cloning .status-icon, .updater-widget .status-box.status-copying .status-icon, .updater-widget .status-box.status-installing .status-icon {
+  color: rgb(184, 202, 199);
+  animation: pulse 2s ease-in-out infinite;
+}
+.updater-widget .status-box.status-checking .status-message, .updater-widget .status-box.status-cloning .status-message, .updater-widget .status-box.status-copying .status-message, .updater-widget .status-box.status-installing .status-message {
+  color: rgb(184, 202, 199);
+}
+.updater-widget .status-box.status-success {
+  border-color: rgba(74, 222, 128, 0.2);
+  background-color: rgba(74, 222, 128, 0.06);
+}
+.updater-widget .status-box.status-success .status-icon {
+  color: #4ade80;
+}
+.updater-widget .status-box.status-success .status-message {
+  color: #4ade80;
+  font-weight: 600;
+}
+.updater-widget .status-box.status-error {
+  border-color: rgba(255, 180, 171, 0.2);
+  background-color: rgba(255, 180, 171, 0.06);
+}
+.updater-widget .status-box.status-error .status-icon {
+  color: rgb(255, 180, 171);
+}
+.updater-widget .status-box.status-error .status-message {
+  color: rgb(255, 180, 171);
+  font-weight: 600;
+}
+.updater-widget {
+  /* ---------- Action buttons ---------- */
+}
+.updater-widget .updater-button {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(56, 57, 57, 0.6);
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+.updater-widget .updater-button:hover {
+  background: rgba(56, 57, 57, 0.99);
+}
+.updater-widget .updater-button {
+  border-radius: calc(8px * 1.2);
+  padding: 0.4rem 0.75rem;
+  font-weight: 600;
+  transition: all 150ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.updater-widget .updater-button .button-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 18px;
+}
+.updater-widget .updater-button:disabled {
+  opacity: 0.5;
+}
+.updater-widget .updater-button-check {
+  background-color: rgba(22.8315789474, 25.3684210526, 24.1, 0.5);
+  border: 1px solid rgba(227, 226, 225, 0.08);
+  color: rgb(227, 226, 225);
+}
+.updater-widget .updater-button-check .button-icon {
+  color: rgba(227, 226, 225, 0.7);
+}
+.updater-widget .updater-button-check:hover:not(:disabled) {
+  background-color: rgba(25.2473684211, 28.0526315789, 26.65, 0.5);
+  border-color: rgba(227, 226, 225, 0.12);
+}
+.updater-widget .updater-button-update {
+  background-color: rgba(184, 202, 199, 0.12);
+  border: 1px solid rgba(184, 202, 199, 0.2);
+  color: rgb(184, 202, 199);
+}
+.updater-widget .updater-button-update .button-icon {
+  color: rgb(184, 202, 199);
+}
+.updater-widget .updater-button-update:hover:not(:disabled) {
+  background-color: rgba(184, 202, 199, 0.15);
+  border-color: rgba(184, 202, 199, 0.25);
+}
+.updater-widget .updater-button-update:active:not(:disabled) {
+  background-color: rgba(184, 202, 199, 0.18);
+}
+.updater-widget {
+  /* ---------- Config / Packages toggles ---------- */
+}
+.updater-widget .config-toggle-button {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(56, 57, 57, 0.6);
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+.updater-widget .config-toggle-button:hover {
+  background: rgba(56, 57, 57, 0.99);
+}
+.updater-widget .config-toggle-button {
+  background-color: transparent;
+  border: 1px solid rgba(227, 226, 225, 0.08);
+  border-radius: calc(8px * 1.2);
+  padding: 0.4rem 0.75rem;
+  transition: all 150ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.updater-widget .config-toggle-button .button-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 18px;
+  color: rgba(227, 226, 225, 0.6);
+}
+.updater-widget .config-toggle-button:hover {
+  background-color: rgba(22.8315789474, 25.3684210526, 24.1, 0.5);
+  border-color: rgba(227, 226, 225, 0.12);
+}
+.updater-widget {
+  /* ---------- Package categories ---------- */
+}
+.updater-widget .package-categories {
+  background-color: rgba(22.8315789474, 25.3684210526, 24.1, 0.5);
+  border: 1px solid rgba(227, 226, 225, 0.08);
+  border-radius: calc(8px * 1.5);
+  padding: 0.75rem;
+  margin-top: 0.4rem;
+}
+.updater-widget .package-categories .category-title {
+  font-size: calc(1.1rem * 0.85);
+  font-weight: 600;
+  color: rgba(227, 226, 225, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.4rem;
+}
+.updater-widget .package-categories .package-category {
+  background-color: rgba(25.2473684211, 28.0526315789, 26.65, 0.5);
+  border: 1px solid rgba(227, 226, 225, 0.08);
+  border-radius: calc(8px * 1.2);
+  padding: 0.4rem;
+  margin: 0.25rem 0;
+  transition: all 150ms ease;
+}
+.updater-widget .package-categories .package-category:hover {
+  background-color: rgba(27.6631578947, 30.7368421053, 29.2, 0.5);
+  border-color: rgba(227, 226, 225, 0.12);
+}
+.updater-widget .package-categories .package-category .category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.updater-widget .package-categories .package-category .category-header .category-name {
+  font-size: calc(1.1rem * 0.95);
+  font-weight: 600;
+  color: rgb(227, 226, 225);
+}
+.updater-widget .package-categories .package-category .category-header .category-count {
+  font-size: calc(1.1rem * 0.8);
+  color: rgba(227, 226, 225, 0.5);
+  background-color: rgba(227, 226, 225, 0.06);
+  padding: 2px 8px;
+  border-radius: calc(8px);
+  border: 1px solid rgba(227, 226, 225, 0.08);
+}
+.updater-widget .package-categories .package-category .package-list {
+  margin-top: 0.25rem;
+}
+.updater-widget .package-categories .package-category .package-list .package-item {
+  font-size: calc(1.1rem * 0.85);
+  color: rgba(227, 226, 225, 0.7);
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  padding: 2px 0;
+}
+.updater-widget .package-categories .package-summary {
+  margin-top: 0.4rem;
+  background-color: rgba(184, 202, 199, 0.06);
+  border: 1px solid rgba(184, 202, 199, 0.12);
+  border-radius: calc(8px);
+  padding: 0.25rem 0.4rem;
+}
+.updater-widget .package-categories .package-summary .summary-text {
+  font-size: calc(1.1rem * 0.85);
+  font-weight: 600;
+  color: rgb(184, 202, 199);
+}
+.updater-widget {
+  /* ---------- Config list ---------- */
+}
+.updater-widget .config-list {
+  background-color: rgba(22.8315789474, 25.3684210526, 24.1, 0.5);
+  border: 1px solid rgba(227, 226, 225, 0.08);
+  border-radius: calc(8px * 1.5);
+  padding: 0.75rem;
+  margin-top: 0.4rem;
+}
+.updater-widget .config-list .config-list-title {
+  font-size: calc(1.1rem * 0.85);
+  font-weight: 600;
+  color: rgba(227, 226, 225, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.4rem;
+}
+.updater-widget .config-list .config-item {
+  background-color: rgba(25.2473684211, 28.0526315789, 26.65, 0.5);
+  border: 1px solid rgba(227, 226, 225, 0.08);
+  border-radius: calc(8px);
+  padding: 0.4rem 0.75rem;
+  margin: 0.25rem 0;
+  transition: all 150ms ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  justify-content: space-between;
+}
+.updater-widget .config-list .config-item:hover {
+  background-color: rgba(27.6631578947, 30.7368421053, 29.2, 0.5);
+  border-color: rgba(227, 226, 225, 0.12);
+}
+.updater-widget .config-list .config-item .config-name {
+  font-size: calc(1.1rem * 0.95);
+  font-weight: 600;
+  color: rgb(227, 226, 225);
+  margin-bottom: 2px;
+}
+.updater-widget .config-list .config-item .config-path {
+  font-size: calc(1.1rem * 0.75);
+  color: rgba(227, 226, 225, 0.5);
+  font-family: "JetBrainsMono Nerd Font", monospace;
+}
+.updater-widget .config-list .config-item .config-switch {
+  width: 44px;
+  height: 24px;
+  min-width: 44px;
+  min-height: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  -gtk-outline-radius: 12px;
+  background-color: rgba(227, 226, 225, 0.12);
+  transition: background-color 200ms ease;
+}
+.updater-widget .config-list .config-item .config-switch slider {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 10px;
+  margin: 2px;
+  margin-left: 2px;
+  margin-right: 22px;
+  background-color: rgba(37.3263157895, 41.4736842105, 39.4, 0.5);
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  -gtk-outline-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+.updater-widget .config-list .config-item .config-switch:checked {
+  background-color: rgb(184, 202, 199);
+}
+.updater-widget .config-list .config-item .config-switch:checked slider {
+  background-color: white;
+  margin-left: 22px;
+  margin-right: 2px;
+}
+.updater-widget .config-list .config-item .config-switch:hover {
+  background-color: rgba(227, 226, 225, 0.15);
+}
+.updater-widget .config-list .config-item .config-switch:hover:checked {
+  background-color: rgb(198.6008064516, 212.8991935484, 210.5161290323);
+}
+.updater-widget .config-list .config-summary {
+  margin-top: 0.4rem;
+  background-color: rgba(184, 202, 199, 0.06);
+  border: 1px solid rgba(184, 202, 199, 0.12);
+  border-radius: calc(8px);
+  padding: 0.25rem 0.4rem;
+}
+.updater-widget .config-list .config-summary .summary-text {
+  font-size: calc(1.1rem * 0.85);
+  font-weight: 600;
+  color: rgb(184, 202, 199);
+}
+.updater-widget {
+  /* ---------- Config info (repo / branch) ---------- */
+}
+.updater-widget .config-info {
+  background-color: rgba(22.8315789474, 25.3684210526, 24.1, 0.5);
+  border: 1px solid rgba(227, 226, 225, 0.08);
+  border-radius: calc(8px * 1.5);
+  padding: 0.4rem 0.75rem;
+  margin-top: 0.4rem;
+}
+.updater-widget .config-info .config-title {
+  font-size: calc(1.1rem * 0.85);
+  font-weight: 600;
+  color: rgba(227, 226, 225, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+.updater-widget .config-info .config-detail {
+  font-size: calc(1.1rem * 0.85);
+  color: rgba(227, 226, 225, 0.7);
+  font-family: "JetBrainsMono Nerd Font", monospace;
+}
+.updater-widget {
+  /* ---------- Config error ---------- */
+}
+.updater-widget .config-error {
+  background-color: rgba(255, 180, 171, 0.06);
+  border: 1px solid rgba(255, 180, 171, 0.15);
+  border-radius: calc(8px * 1.5);
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 0.4rem;
+}
+.updater-widget .config-error .config-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 48px;
+  color: rgb(255, 180, 171);
+  margin-bottom: 0.25rem;
+}
+.updater-widget .config-error .config-error-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgb(255, 180, 171);
+  margin-bottom: 0.25rem;
+}
+.updater-widget .config-error .config-error-hint {
+  font-size: calc(1.1rem * 0.85);
+  color: rgba(255, 180, 171, 0.7);
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  text-align: center;
+}
+
+/* ---------- Utilities & animations ---------- */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+/* material-icon mixin (keeps icon sizing consistent) */
+/* icon-compact used by multiple labels inside the component */
+.icon-compact {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-size: 1em;
+  display: inline-block;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  font-size: calc(1.1rem * 1.3);
+  color: rgba(227, 226, 225, 0.5);
+  transition: all 150ms ease;
+}
+
+.sidebar {
+  border-radius: 16px;
+  box-shadow: 0 3px 5px 1px rgba(18, 20, 19, 0.1);
+  background: rgba(18, 20, 19, 0.5);
+  margin: 5px 10px 15px;
+  padding: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+  margin: 0.75rem;
+}
+.sidebar > box {
+  border-radius: calc(16px - 0.4rem - 2px);
+  box-shadow: 0 1px 5px -5px rgba(0, 0, 0, 0.5);
+  background: rgba(56, 57, 57, 0.6);
+  margin: 0.4rem;
+  padding: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.sidebar separator {
+  background-color: rgba(227, 226, 225, 0.2);
+  margin: 0.5rem 0;
+  min-height: 1px;
+}
+.sidebar image {
+  margin-right: 0.75rem;
+}
+
+/* variables & mixins */
+/* general styles */
+/* general */
+.system-menu {
+  -gtk-icon-size: 1.1rem;
+  border-radius: 16px;
+  box-shadow: 0 3px 5px 1px rgba(18, 20, 19, 0.1);
+  background: rgba(18, 20, 19, 0.5);
+  margin: 5px 10px 15px;
+  padding: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 0.75rem;
+  margin-right: 0.75rem;
+}
+.system-menu > box {
+  border-radius: calc(16px - 0.4rem - 2px);
+  box-shadow: 0 1px 5px -5px rgba(0, 0, 0, 0.5);
+  background: rgba(56, 57, 57, 0.6);
+  margin: 0.4rem;
+  padding: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* toggles */
+.system-menu .toggle {
+  min-width: 20rem;
+}
+.system-menu .toggle:not(:last-child) {
+  margin-bottom: 0.4rem;
+}
+.system-menu .toggle button {
+  margin-right: 0.4rem;
+}
+
+/* power profiles */
+.system-menu .power-profiles {
+  padding: 0;
+}
+.system-menu .power-profiles .current-profile {
+  padding: 0.4rem;
+}
+.system-menu .power-profiles image,
+.system-menu .power-profiles label {
+  margin: 0.4rem;
+}
+.system-menu .power-profiles .profile-options box {
+  padding: 0.4rem;
+}
+
+/* sliders */
+.system-menu .sliders {
+  min-height: 0.4rem;
+}
+.system-menu .sliders image {
+  margin: 0.4rem;
+}
+.system-menu .sliders trough {
+  margin: 0.4rem;
+}
+.system-menu .sliders block {
+  min-height: 0.4rem;
+}
+.system-menu .sliders block filled {
+  border-radius: 1.5rem;
+  background-color: rgb(227, 226, 225);
+}
+
+.arrow-indicator {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+}
+
+.arrow-down {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  transform: rotate(90deg);
+}
+
+.system-menu-list {
+  border-radius: 16px;
+  box-shadow: 0 3px 5px 1px rgba(18, 20, 19, 0.1);
+  background: rgba(18, 20, 19, 0.5);
+  margin: 5px 10px 15px;
+  padding: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0.4rem;
+}
+
+.network-item {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(56, 57, 57, 0.6);
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+.network-item:hover {
+  background: rgba(56, 57, 57, 0.99);
+}
+.network-item {
+  border-radius: calc(16px - 0.4rem - 2px);
+  margin: 0.25rem 0.4rem 0.4rem 0.75rem;
+  padding: 0.75rem;
+}
+.network-item image:first-child {
+  margin-right: 0.4rem;
+}
+.network-item label {
+  margin: 0 0.4rem;
+}
+
+.network-item-active {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(184, 202, 199, 0.2);
+  border: 1px solid rgba(184, 202, 199, 0.3);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+.network-item-active:hover {
+  background: rgba(184, 202, 199, 0.3);
+}
+.network-item-active {
+  border-radius: calc(16px - 0.4rem - 2px);
+  margin: 0.25rem 0.4rem 0.4rem 0.75rem;
+  padding: 0.75rem;
+}
+
+.password-dialog {
+  border-radius: calc(16px - 0.4rem - 2px);
+  box-shadow: 0 1px 5px -5px rgba(0, 0, 0, 0.5);
+  background: rgba(56, 57, 57, 0.6);
+  margin: 0.4rem;
+  padding: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.error-message {
+  color: #d17678;
+  margin: 0.25rem 0;
+}
+
+.section-label {
+  font-weight: bold;
+  margin: 0.4rem 0 0.25rem 0;
+}
+
+.refresh-button,
+.disconnect-button,
+.settings-button {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(56, 57, 57, 0.6);
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+.refresh-button:hover,
+.disconnect-button:hover,
+.settings-button:hover {
+  background: rgba(56, 57, 57, 0.99);
+}
+.refresh-button,
+.disconnect-button,
+.settings-button {
+  margin: 0.4rem;
+}
+
+.disconnect-button {
+  padding: 0.58rem 0;
+}
+
+.connect-button,
+.cancel-button,
+.forget-button,
+.pair-button,
+.trust-button {
+  margin: 0.4rem;
+}
+
+.disconnect-button,
+.forget-button,
+.cancel-button {
+  border-radius: calc(8px * 1.6);
+}
+
+image {
+  margin: 0.4rem;
+}
+
+.password-search {
+  border-radius: calc(16px - 0.4rem - 2px);
+  box-shadow: 0 1px 5px -5px rgba(0, 0, 0, 0.5);
+  background: rgba(56, 57, 57, 0.6);
+  margin: 0.4rem;
+  padding: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(18, 20, 19, 0.5);
+}
+.password-search entry menu {
+  background: rgb(18, 20, 19);
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+.password-search entry menu separator {
+  background-color: rgba(56, 57, 57, 0.6);
+}
+.password-search entry menu menuitem {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(56, 57, 57, 0.6);
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+.password-search entry menu menuitem:hover {
+  background: rgba(56, 57, 57, 0.99);
+}
+.password-search entry menu menuitem {
+  border-radius: 0;
+  padding: 0.4rem 0.7rem;
+}
+.password-search entry menu menuitem:first-child {
+  border-radius: 8px 8px 0 0;
+}
+.password-search entry menu menuitem:last-child {
+  border-radius: 0 0 8px 8px;
+}
+.password-search entry menu menuitem:only-child {
+  border-radius: 8px;
+}
+
+.empty-label {
+  margin: 0.4rem;
+  color: #d17678;
+}
+
+.saved-network {
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(56, 57, 57, 0.6);
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+.saved-network:hover {
+  background: rgba(56, 57, 57, 0.99);
+}
+.saved-network {
+  border-radius: calc(16px - 0.4rem - 2px);
+  margin: 0.4rem 0.4rem 0.4rem 0.75rem;
+  padding: 0.25rem;
+}
+.saved-network > label {
+  margin-left: 0.4rem;
+}
+
+.bt-button-container {
+  margin: 0 0.25rem 0.4rem 0.4rem;
+}
+
+/* variables & mixins */
+/* general styles */
+box.window-switcher-background {
+  background-color: transparent;
+}
+box.window-switcher-background .window-switcher {
+  border-radius: 16px;
+  box-shadow: 0 3px 5px 1px rgba(18, 20, 19, 0.1);
+  background: rgba(18, 20, 19, 0.5);
+  margin: 5px 10px 15px;
+  padding: 0.4rem;
+  background-color: rgba(18, 20, 19, 0.7);
+  padding: 1rem;
+}
+box.window-switcher-background .window-switcher .search-section {
+  border-radius: calc(16px - 0.4rem - 2px);
+  box-shadow: 0 1px 5px -5px rgba(0, 0, 0, 0.5);
+  background: rgba(56, 57, 57, 0.6);
+  margin: 0.4rem;
+  padding: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  background-color: rgba(184, 202, 199, 0.15);
+  padding: 0.4rem;
+}
+box.window-switcher-background .window-switcher .search-section label.search-icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+}
+box.window-switcher-background .window-switcher .search-section entry.search-entry {
+  font-size: 1rem;
+  padding: 0.25rem 0.4rem;
+  background: transparent;
+  border: none;
+  color: rgb(227, 226, 225);
+}
+box.window-switcher-background .window-switcher .search-section entry.search-entry:focus {
+  outline: none;
+  box-shadow: none;
+}
+box.window-switcher-background .window-switcher .search-section .shortcut-hint {
+  font-size: 0.7rem;
+  color: rgba(227, 226, 225, 0.6);
+  margin: 0 0.5rem;
+}
+box.window-switcher-background .window-switcher .window-grid {
+  padding: 0;
+}
+box.window-switcher-background .window-switcher button.window-card {
+  border-radius: calc(16px - 0.4rem - 2px);
+  box-shadow: 0 1px 5px -5px rgba(0, 0, 0, 0.5);
+  background: rgba(56, 57, 57, 0.6);
+  margin: 0.4rem;
+  padding: 0.4rem;
+  transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  background: rgba(56, 57, 57, 0.6);
+  border: 1px solid rgba(227, 226, 225, 0.1);
+  border-radius: calc(8px * 1.97);
+  padding: 0.4rem;
+}
+box.window-switcher-background .window-switcher button.window-card:hover {
+  background: rgba(56, 57, 57, 0.99);
+}
+box.window-switcher-background .window-switcher button.window-card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0.5rem;
+  padding: 1rem;
+  min-width: 220px;
+  min-height: 160px;
+}
+box.window-switcher-background .window-switcher button.window-card.selected {
+  background: rgba(184, 202, 199, 0.3);
+  border-color: rgb(184, 202, 199);
+  box-shadow: 0 0 20px rgba(184, 202, 199, 0.5);
+}
+box.window-switcher-background .window-switcher button.window-card.selected .window-card-title {
+  color: rgb(184, 202, 199);
+  font-weight: 600;
+}
+box.window-switcher-background .window-switcher button.window-card.selected .window-icon-large {
+  color: rgb(184, 202, 199);
+}
+box.window-switcher-background .window-switcher button.window-card .window-icon-large {
+  font-family: "Material Symbols Outlined";
+  font-size: 4rem;
+  color: rgb(227, 226, 225);
+  margin-bottom: 0.5rem;
+}
+box.window-switcher-background .window-switcher button.window-card .window-card-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(227, 226, 225);
+  margin: 0.3rem 0;
+}
+box.window-switcher-background .window-switcher button.window-card .window-card-workspace {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgb(184, 202, 199);
+  margin: 0.2rem 0;
+}
+box.window-switcher-background .window-switcher button.window-card .window-card-subtitle {
+  font-size: 0.75rem;
+  color: rgba(227, 226, 225, 0.5);
+}
+box.window-switcher-background .window-switcher button.window-card .window-badge-small {
+  border-radius: calc(16px - 0.4rem - 2px);
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  margin: 2px 4px 0 0;
+}
+box.window-switcher-background .window-switcher button.window-card .window-badge-small.fullscreen-badge {
+  background-color: rgba(184, 202, 199, 0.2);
+  color: rgb(184, 202, 199);
+}
+box.window-switcher-background .window-switcher button.window-card .window-badge-small.floating-badge {
+  background-color: rgba(227, 226, 225, 0.2);
+  color: rgb(227, 226, 225);
+}
+box.window-switcher-background .window-switcher label.no-entries {
+  padding: 2rem;
+  color: rgba(227, 226, 225, 0.6);
+  font-style: italic;
+}
+
+button.invisible-close {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/*# sourceMappingURL=main.css.map */

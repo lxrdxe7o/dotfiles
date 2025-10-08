@@ -1,0 +1,72 @@
+{
+  "app.browser": "firefox",
+  "app.file-manager": "nautilus",
+  "app.resource-monitor": "resources",
+  "app.terminal": "foot",
+  "app.wifi": "XDG_CURRENT_DESKTOP=GNOME gnome-control-center wifi",
+  "app.audio": "pwvucontrol",
+  "bar.position": "top",
+  "bar.style": "beveled",
+  "bar.modules.cava.show": true,
+  "bar.modules.cava.style": "catmull_rom",
+  "bar.modules.media.cava.show": true,
+  "bar.modules.media.truncate": true,
+  "bar.modules.media.max-chars": 70,
+  "bar.modules.os-icon.type": "arch-symbolic",
+  "bar.modules.os-icon.show": true,
+  "clock.format": "24",
+  "musicPlayer.modules.cava.show": true,
+  "musicPlayer.modules.cava.style": "catmull_rom",
+  "system-menu.modules.bluetooth-advanced.enable": true,
+  "system-menu.modules.wifi-advanced.enable": true,
+  "wallpaper.dir": "/home/xero/Pictures/wallpapers",
+  "wallpaper.cache-size": 50,
+  "wallpaper.theme-cache-size": 100,
+  "notification-center.max-notifications": 4,
+  "clipboard.show-images": true,
+  "weather.update-interval": 900000,
+  "dock.enabled": true,
+  "dock.auto-hide": true,
+  "dock.pinned-apps": [
+    {
+      "name": "Firefox",
+      "icon": "firefox",
+      "class": "firefox"
+    },
+    {
+      "name": "Code",
+      "icon": "code",
+      "class": "Code"
+    },
+    {
+      "name": "Terminal",
+      "icon": "utilities-terminal",
+      "class": "foot"
+    },
+    {
+      "name": "Files",
+      "icon": "system-file-manager",
+      "class": "org.gnome.Nautilus"
+    },
+    {
+      "name": "Discord",
+      "icon": "discord",
+      "class": "discord"
+    },
+    {
+      "name": "Obsidian",
+      "icon": "obsidian",
+      "class": "obsidian"
+    },
+    {
+      "name": "Spotify",
+      "icon": "spotify",
+      "class": "Spotify"
+    },
+    {
+      "name": "VLC",
+      "icon": "vlc",
+      "class": "vlc"
+    }
+  ]
+}
