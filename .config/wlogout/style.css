@@ -7,7 +7,7 @@ window {
   font-size: 24pt;
   color: @foreground;
   /* text */
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
 button {
