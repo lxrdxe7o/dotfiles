@@ -113,15 +113,15 @@ app.start({
 
     // Initialize widgets
     //    Bar();
-    //    Notifications();
+    //Notifications();
     //    OnScreenDisplay();
     //    SystemMenu();
     //    MusicPlayer();
     //    PickerWindow();
     LogoutMenu();
-    //    Sidebar();
+    Sidebar();
     //    Clipboard();
     WindowSwitcher();
-    //    Dock();
+    //Dock();
   },
 });
