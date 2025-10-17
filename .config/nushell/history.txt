@@ -1,0 +1,314 @@
+clear
+ls
+l
+clear
+ls
+z
+clear
+ls
+clear
+ls
+clear
+ls
+clear
+ls
+clear
+exit
+clear
+ls
+clear
+ls
+clear
+j
+clear
+starship preset nerd-font-symbols -o ~/.config/starship.toml
+ls
+clear
+z dotf
+cd dotfiles/
+sls
+clear
+ls
+la
+l
+clear
+..
+cd Documents/
+ls
+cd web/
+ls
+clear
+ls
+cd js/
+clear
+ls
+..
+la
+ls
+cd css/
+ls
+z
+clear
+cd
+clear
+starship preset nerd-font-symbols -o ~/.config/starship.toml
+ls
+z Documents/
+cd Documents/
+ls
+clear
+ls
+cd cpp-prac/
+ls
+..
+cd Git-repos/
+ls
+cd 215_Project/
+ls
+clear
+cd src/
+ls
+clear
+ls
+clear
+cd
+clear
+echo $nu.env-path
+exit
+z
+clear
+zi
+z conf
+clear
+atuin import auto
+atuin sync
+clear
+exit
+clear
+atuin import auto
+z conf
+z atuin/
+ls
+nvim config.toml
+clear
+ls
+z local
+z share/
+z atuin/
+ls
+atuin init nu | save ~/.local/share/atuin/init.nu
+ls
+z conf
+z nu
+nvim config.nu
+clear
+exit
+zi
+yazi
+clear
+bat .zshrc
+lsd
+echo $env.config.buffer_editor
+cargo -v
+clear
+exit
+clear
+exit
+clear
+ls
+clear
+lad
+lsd
+clear
+ls
+lsd
+clear
+ls -a
+ls -t
+clear
+z conf
+ls
+clear
+lls
+ls
+clear
+ll
+clear
+ls
+clear
+lsd
+lsd -a
+lsd -t
+clear
+lsd -lt
+clear
+lsd
+ls
+clear
+ls
+z
+clear
+ls
+lsd
+clear
+config nu
+clear
+z conf
+z gh
+clear
+ls
+lg
+clear
+ls
+clear
+z nu
+z
+nvim .zshrc
+clear
+ls
+clear
+fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
+fastfetch -c ($env.HOME)/.config/fastfetch/config-compact.jsonc
+clear
+lg
+clear
+ls
+clear
+ls
+clear
+z dotf
+lg
+clear
+z
+clear
+pnp
+nvm
+clear
+npm
+ls
+clear
+ls
+clear
+pnp
+node
+clear
+npm -v
+echo $NVM_DIR
+clear
+z .nvm/
+ls
+clear
+z
+clear
+nvm
+npm
+node -v
+fetch
+clear
+ls
+clear
+ls
+clear
+ls
+clear
+ls
+clear
+fish
+z
+clear
+fetch
+tv
+clear
+config nu
+z gh
+ls
+clear
+ls
+clear
+ls
+nvim config
+ls
+clear
+ls
+lg
+clear
+z
+fetch
+clear
+fetch
+clear
+z fas
+ls
+z down
+ls
+cp ice-bear.png ~/.config/fastfetch/arch.png
+fastfetch -c ($env.HOME)/.config/fastfetch/config-compact.jsonc
+clear
+z
+fastfetch -c ($env.HOME)/.config/fastfetch/config-compact.jsonc
+clear
+fetch
+clear
+z nu
+clear
+ls
+clear
+ls
+clear
+config nu
+z
+clear
+ls
+clear
+z
+ls
+clear
+z doc
+ls
+mkdir wdev
+z wdev
+clear
+ls
+clear
+nvim
+ls
+clear
+z nvim
+nvim
+nvim
+clear
+config nu
+z gh
+clear
+ls
+clear
+nvim
+exir
+exit
+ld
+man ld
+clear
+ls
+z
+clear
+ls
+exit
+ls
+clear
+l
+ls -a
+clear
+fetch
+clea
+clear
+exir
+exit
+ls
+clear
+ls
+clear
+ls
+clear
+exit
+clear
+exit
