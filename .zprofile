@@ -14,4 +14,3 @@ fi
 
 # Added by Toolbox App
 export PATH="$PATH:/home/xero/.local/share/JetBrains/Toolbox/scripts"
-

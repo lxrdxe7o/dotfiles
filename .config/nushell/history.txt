@@ -312,3 +312,19 @@ clear
 exit
 clear
 exit
+ff
+fastfetch 
+l
+ls
+man nu
+man nushell
+exit
+ls
+l
+z
+zi
+clear
+ls
+exit
+groups 
+exit
