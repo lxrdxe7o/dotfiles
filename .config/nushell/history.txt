@@ -328,3 +328,8 @@ ls
 exit
 groups 
 exit
+fastfetch 
+ls
+z
+l
+exit

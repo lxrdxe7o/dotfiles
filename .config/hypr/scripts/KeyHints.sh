@@ -28,10 +28,11 @@ GDK_BACKEND=$BACKEND yad \
 " SHIFT E" "KooL Hyprland Settings Menu" "" \
 "" "" "" \
 " enter" "Terminal" "(kitty)" \
+" SHIFT p" "Power-profile" "(asusctl profile -n)" \
 " ALT enter" "Alternate Terminal" "(ghostty)" \
 " SHIFT enter" "DropDown Terminal" " Q to close" \
 " B" "Launch Browser" "(Default browser)" \
-" A" "Desktop Overview" "(AGS - if opted to install)" \
+" A" "Desktop Overview" "(rofi)" \
 " D" "Application Launcher" "(rofi-wayland)" \
 " E" "Open File Manager" "(Thunar)" \
 " S" "Google Search using rofi" "(rofi)" \

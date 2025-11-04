@@ -34,6 +34,9 @@ palette = "dark16"
 threshold = 11
 
 [templates]
+starship.template = 'colors-starship.toml'
+starship.target = '~/.config/starship.toml'
+
 cava.template = 'colors-cava'
 cava.target = '~/.config/cava/config'
 
@@ -49,8 +52,8 @@ waybar.target = '~/.config/waybar/wallust/colors-waybar.css'
 kitty.template = 'colors-kitty.conf'
 kitty.target = '~/.config/kitty/kitty-themes/01-Wallust.conf'
 
-#swaync.template = 'colors-swaync.css'
-#swaync.target = '~/.config/swaync/wallust/colors-wallust.css'
+swaync.template = 'colors-swaync.css'
+swaync.target = '~/.config/swaync/wallust/colors-wallust.css'
 
 #macchina.template = 'colors-macchina.toml'
 #macchina.target = '~/.config/macchina/themes/wallust.toml'
@@ -58,5 +61,5 @@ kitty.target = '~/.config/kitty/kitty-themes/01-Wallust.conf'
 #wezterm.template = 'colors-wezterm.toml'
 #wezterm.target = '~/.config/wezterm/colors/wallust.toml'
 
-#zathura.template = 'colors-zathura'
-#zathura.target = '~/.config/zathura/zathurarc'
+zathura.template = 'colors-zathura'
+zathura.target = '~/.config/zathura/zathurarc'
