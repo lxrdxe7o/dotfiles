@@ -12,7 +12,7 @@ alias fetch='fastfetch'
 alias lg='lazygit'
 alias pacup='sudo pacman -Syu'
 alias yayup='yay -Syu'
-alias ff='pokemon-colorscripts --no-title -s -n pikachu | fastfetch -c {$HOME}/.config/fastfetch/config-compact.jsonc --logo-type file-raw --logo-height 6 --logo-width 5 --logo -'
+alias ff='pokemon-colorscripts --no-title -s -n gengar | fastfetch -c {$HOME}/.config/fastfetch/config-compact.jsonc --logo-type file-raw --logo-height 6 --logo-width 5 --logo -'
 alias reload='source ~/.config/fish/config.fish'
 alias ta='tmux attach'
 
