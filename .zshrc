@@ -44,6 +44,8 @@ source $ZSH/oh-my-zsh.sh
 alias fetch='fastfetch'
 alias lg='lazygit'
 alias ta='tmux attach'
+# Custom animated fastfetch
+alias fetch="clear && kitten icat --place 30x20@1x2 ~/.config/fastfetch/bebop.gif | fastfetch --logo-width 30 --raw -"
 
 # Set-up icons for files/directories in terminal using lsd
 alias ls='lsd'

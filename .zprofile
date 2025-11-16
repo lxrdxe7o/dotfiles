@@ -1,8 +1,3 @@
-# Auto starts Hyprland if on tty1 and no X session is running
-if [[ -z $DISPLAY ]] && [[ ${XDG_VTNR:-0} -eq 1 ]]; then
-    exec Hyprland
-fi
-
 # --- Auto-start tmux on TTY1 ---
 if [[ -z $DISPLAY ]] && [[ $(tty) == /dev/tty1 ]]; then
   # If already inside tmux, do nothing
