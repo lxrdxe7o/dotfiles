@@ -333,3 +333,15 @@ ls
 z
 l
 exit
+ls
+eza
+lsd
+eza
+lsd
+l
+lsd -l
+ls
+yazi
+ls
+z
+exit
