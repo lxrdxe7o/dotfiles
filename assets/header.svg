@@ -1,0 +1,94 @@
+<svg width="100%" height="150" viewBox="0 0 800 150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8a0303;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </linearGradient>
+    <style>
+      @keyframes glitch {
+        0% { transform: translate(0); }
+        20% { transform: translate(-2px, 2px); }
+        40% { transform: translate(-2px, -2px); }
+        60% { transform: translate(2px, 2px); }
+        80% { transform: translate(2px, -2px); }
+        100% { transform: translate(0); }
+      }
+      @keyframes scanline {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(100%); }
+      }
+      .bg-text {
+        font-family: sans-serif;
+        font-weight: 900;
+        font-size: 80px;
+        text-anchor: middle;
+        fill: none;
+        stroke: rgba(138, 3, 3, 0.1);
+        stroke-width: 2;
+      }
+      .main-text {
+        font-family: sans-serif;
+        font-weight: 900;
+        font-size: 60px;
+        text-anchor: middle;
+        fill: #e0e0e0;
+        filter: drop-shadow(0 0 5px #8a0303) drop-shadow(0 0 10px #000000);
+      }
+      .glitch-1 {
+        fill: #ff0000;
+        opacity: 0.7;
+        animation: glitch 2.5s infinite linear alternate-reverse;
+      }
+      .glitch-2 {
+        fill: #4a0000;
+        opacity: 0.7;
+        animation: glitch 3s infinite linear alternate-reverse;
+      }
+      .sub-text {
+        font-family: monospace;
+        font-size: 14px;
+        fill: #8a0303;
+        letter-spacing: 4px;
+        text-anchor: middle;
+      }
+      .jp-text {
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 120px;
+        fill: rgba(138, 3, 3, 0.1);
+        text-anchor: end;
+        user-select: none;
+      }
+    </style>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#050505" />
+  
+  <!-- Grid lines -->
+  <path d="M0 0 L800 0 M0 30 L800 30 M0 60 L800 60 M0 90 L800 90 M0 120 L800 120 M0 150 L800 150" stroke="#1a1a1a" stroke-width="1" />
+  <path d="M0 0 L0 150 M160 0 L160 150 M320 0 L320 150 M480 0 L480 150 M640 0 L640 150 M800 0 L800 150" stroke="#1a1a1a" stroke-width="1" />
+
+  <!-- Background Scanline effect overlay -->
+  <rect width="100%" height="10px" fill="rgba(138, 3, 3, 0.05)">
+      <animateTransform attributeName="transform" type="translate" from="0 -10" to="0 150" dur="4s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Large Japanese BG Text -->
+  <text x="780" y="110" class="jp-text">ゼロ</text>
+  <text x="50" y="110" class="jp-text" text-anchor="start" font-size="80px">設定</text>
+
+  <!-- Main Title with Glitch -->
+  <text x="402" y="80" class="main-text glitch-1">XERO'S DOTFILES</text>
+  <text x="398" y="80" class="main-text glitch-2">XERO'S DOTFILES</text>
+  <text x="400" y="80" class="main-text">XERO'S DOTFILES</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="115" class="sub-text">HYPRLAND // ARCH LINUX // SYSTEM READY</text>
+  
+  <!-- Decorative corners -->
+  <path d="M10 10 L40 10 L40 40" fill="none" stroke="#8a0303" stroke-width="3" />
+  <path d="M790 10 L760 10 L760 40" fill="none" stroke="#606060" stroke-width="3" />
+  <path d="M10 140 L40 140 L40 110" fill="none" stroke="#606060" stroke-width="3" />
+  <path d="M790 140 L760 140 L760 110" fill="none" stroke="#8a0303" stroke-width="3" />
+
+</svg>

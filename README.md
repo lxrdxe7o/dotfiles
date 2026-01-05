@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="assets/header.svg" width="100%" />
+</div>
+
 # Xero's Dotfiles
 
 Arch Linux + Hyprland development environment dotfiles. Optimized for stability, performance, and a clean developer workflow.
@@ -21,25 +25,26 @@ Based on [JaKooLit's Hyprland-Dots](https://github.com/JaKooLit/Hyprland-Dots) w
 
 This dotfiles repository includes configurations for:
 
-| Component | Application |
-|-----------|-------------|
-| **Window Manager** | Hyprland |
-| **Terminal** | Kitty, Ghostty |
-| **Shell** | Zsh (with Oh-My-Zsh + Powerlevel10k) |
-| **Bar** | Waybar |
-| **Launcher** | Rofi (Wayland fork) |
-| **Notifications** | SwayNC |
-| **File Manager** | Thunar |
-| **Wallpaper** | swww + wallust (dynamic theming) |
-| **Lock Screen** | Hyprlock |
-| **Idle Daemon** | Hypridle |
-| **Multiplexer** | Tmux |
-| **Editor** | Neovim |
+| Component          | Application                          |
+| ------------------ | ------------------------------------ |
+| **Window Manager** | Hyprland                             |
+| **Terminal**       | Kitty, Ghostty                       |
+| **Shell**          | Zsh (with Oh-My-Zsh + Powerlevel10k) |
+| **Bar**            | Waybar                               |
+| **Launcher**       | Rofi (Wayland fork)                  |
+| **Notifications**  | SwayNC                               |
+| **File Manager**   | Thunar                               |
+| **Wallpaper**      | swww + wallust (dynamic theming)     |
+| **Lock Screen**    | Hyprlock                             |
+| **Idle Daemon**    | Hypridle                             |
+| **Multiplexer**    | Tmux                                 |
+| **Editor**         | Neovim                               |
 
 ## Screenshots
 
 <!-- Add your screenshots here -->
-*Screenshots coming soon...*
+
+_Screenshots coming soon..._
 
 ## Requirements
 
@@ -216,61 +221,61 @@ dotfiles/
 
 ### General
 
-| Keybinding | Action |
-|------------|--------|
-| `SUPER + Return` | Open terminal (Kitty) |
+| Keybinding             | Action                           |
+| ---------------------- | -------------------------------- |
+| `SUPER + Return`       | Open terminal (Kitty)            |
 | `SUPER + ALT + Return` | Open terminal with tmux attached |
-| `SUPER + Q` | Close active window |
-| `SUPER + D` | Application launcher (Rofi) |
-| `SUPER + E` | File manager (Thunar) |
-| `SUPER + B` | Open default browser |
-| `CTRL + ALT + Delete` | Exit Hyprland |
+| `SUPER + Q`            | Close active window              |
+| `SUPER + D`            | Application launcher (Rofi)      |
+| `SUPER + E`            | File manager (Thunar)            |
+| `SUPER + B`            | Open default browser             |
+| `CTRL + ALT + Delete`  | Exit Hyprland                    |
 
 ### Window Management
 
-| Keybinding | Action |
-|------------|--------|
-| `SUPER + Arrow Keys` | Move focus |
-| `SUPER + SHIFT + Arrow Keys` | Resize window |
-| `SUPER + CTRL + Arrow Keys` | Move window |
-| `SUPER + ALT + Arrow Keys` | Swap window |
-| `SUPER + SPACE` | Toggle floating |
-| `SUPER + SHIFT + F` | Fullscreen |
-| `SUPER + CTRL + F` | Fake fullscreen |
+| Keybinding                   | Action          |
+| ---------------------------- | --------------- |
+| `SUPER + Arrow Keys`         | Move focus      |
+| `SUPER + SHIFT + Arrow Keys` | Resize window   |
+| `SUPER + CTRL + Arrow Keys`  | Move window     |
+| `SUPER + ALT + Arrow Keys`   | Swap window     |
+| `SUPER + SPACE`              | Toggle floating |
+| `SUPER + SHIFT + F`          | Fullscreen      |
+| `SUPER + CTRL + F`           | Fake fullscreen |
 
 ### Workspaces
 
-| Keybinding | Action |
-|------------|--------|
-| `SUPER + 1-0` | Switch to workspace 1-10 |
+| Keybinding            | Action                        |
+| --------------------- | ----------------------------- |
+| `SUPER + 1-0`         | Switch to workspace 1-10      |
 | `SUPER + SHIFT + 1-0` | Move window to workspace 1-10 |
-| `SUPER + Tab` | Next workspace |
-| `SUPER + SHIFT + Tab` | Previous workspace |
-| `SUPER + U` | Toggle special workspace |
-| `SUPER + SHIFT + U` | Move to special workspace |
+| `SUPER + Tab`         | Next workspace                |
+| `SUPER + SHIFT + Tab` | Previous workspace            |
+| `SUPER + U`           | Toggle special workspace      |
+| `SUPER + SHIFT + U`   | Move to special workspace     |
 
 ### Utilities
 
-| Keybinding | Action |
-|------------|--------|
+| Keybinding          | Action                        |
+| ------------------- | ----------------------------- |
 | `SUPER + SHIFT + S` | Screenshot (area) with Swappy |
-| `SUPER + Print` | Screenshot (full) |
-| `SUPER + ALT + V` | Clipboard manager |
-| `SUPER + H` | Keybindings cheat sheet |
-| `SUPER + CTRL + L` | Lock screen |
-| `SUPER + CTRL + P` | Power menu (wlogout) |
-| `SUPER + W` | Wallpaper selector |
-| `SUPER + A` | Window overview (Quickshell) |
+| `SUPER + Print`     | Screenshot (full)             |
+| `SUPER + ALT + V`   | Clipboard manager             |
+| `SUPER + H`         | Keybindings cheat sheet       |
+| `SUPER + CTRL + L`  | Lock screen                   |
+| `SUPER + CTRL + P`  | Power menu (wlogout)          |
+| `SUPER + W`         | Wallpaper selector            |
+| `SUPER + A`         | Window overview (Quickshell)  |
 
 ### Media Keys
 
-| Keybinding | Action |
-|------------|--------|
-| `XF86AudioRaiseVolume` | Volume up |
-| `XF86AudioLowerVolume` | Volume down |
-| `XF86AudioMute` | Toggle mute |
-| `XF86AudioMicMute` | Toggle mic mute |
-| `XF86MonBrightnessUp` | Brightness up |
+| Keybinding              | Action          |
+| ----------------------- | --------------- |
+| `XF86AudioRaiseVolume`  | Volume up       |
+| `XF86AudioLowerVolume`  | Volume down     |
+| `XF86AudioMute`         | Toggle mute     |
+| `XF86AudioMicMute`      | Toggle mic mute |
+| `XF86MonBrightnessUp`   | Brightness up   |
 | `XF86MonBrightnessDown` | Brightness down |
 
 ## Customization
@@ -306,6 +311,7 @@ swww img /path/to/wallpaper.jpg --transition-type grow
 ### Monitor Configuration
 
 Use `nwg-displays` for GUI configuration, or edit:
+
 - `.config/hypr/monitors.conf`
 - `.config/hypr/workspaces.conf`
 
@@ -314,24 +320,28 @@ Use `nwg-displays` for GUI configuration, or edit:
 ### Common Issues
 
 #### Screen tearing or flickering
+
 ```bash
 # Try disabling VRR in UserSettings.conf
 vrr = 0
 ```
 
 #### Waybar not showing
+
 ```bash
 # Restart waybar
 killall waybar && waybar &
 ```
 
 #### Rofi not launching
+
 ```bash
 # Kill existing instance first
 pkill rofi; rofi -show drun
 ```
 
 #### Wallpaper not loading
+
 ```bash
 # Check if swww-daemon is running
 pgrep swww-daemon || swww-daemon &
@@ -339,13 +349,16 @@ swww img ~/Pictures/wallpapers/your-wallpaper.jpg
 ```
 
 #### Audio not working
+
 ```bash
 # Restart PipeWire
 systemctl --user restart pipewire pipewire-pulse wireplumber
 ```
 
 #### NVIDIA users
+
 Add these to `.config/hypr/UserConfigs/ENVariables.conf`:
+
 ```conf
 env = LIBVA_DRIVER_NAME,nvidia
 env = __GLX_VENDOR_LIBRARY_NAME,nvidia
@@ -374,15 +387,15 @@ journalctl --user -xe
 
 Key environment variables configured for development:
 
-| Variable | Value | Purpose |
-|----------|-------|---------|
-| `GDK_BACKEND` | wayland,x11,* | GTK apps prefer Wayland |
-| `QT_QPA_PLATFORM` | wayland;xcb | Qt apps prefer Wayland |
-| `ELECTRON_OZONE_PLATFORM_HINT` | auto | Electron apps on Wayland |
-| `MOZ_ENABLE_WAYLAND` | 1 | Firefox on Wayland |
-| `SSH_AUTH_SOCK` | $XDG_RUNTIME_DIR/ssh-agent.socket | SSH agent for Git |
-| `_JAVA_AWT_WM_NONREPARENTING` | 1 | Java GUI apps fix |
-| `EDITOR` | nvim | Default editor |
+| Variable                       | Value                             | Purpose                  |
+| ------------------------------ | --------------------------------- | ------------------------ |
+| `GDK_BACKEND`                  | wayland,x11,\*                    | GTK apps prefer Wayland  |
+| `QT_QPA_PLATFORM`              | wayland;xcb                       | Qt apps prefer Wayland   |
+| `ELECTRON_OZONE_PLATFORM_HINT` | auto                              | Electron apps on Wayland |
+| `MOZ_ENABLE_WAYLAND`           | 1                                 | Firefox on Wayland       |
+| `SSH_AUTH_SOCK`                | $XDG_RUNTIME_DIR/ssh-agent.socket | SSH agent for Git        |
+| `_JAVA_AWT_WM_NONREPARENTING`  | 1                                 | Java GUI apps fix        |
+| `EDITOR`                       | nvim                              | Default editor           |
 
 ## Credits
 
@@ -397,3 +410,7 @@ These dotfiles are provided as-is. Feel free to use, modify, and distribute.
 ---
 
 **Happy ricing!**
+
+<div align="center">
+  <img src="assets/footer.svg" width="100%" />
+</div>
