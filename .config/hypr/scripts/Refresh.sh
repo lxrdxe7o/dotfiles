@@ -22,18 +22,7 @@ for _prs in "${_ps[@]}"; do
     fi
 done
 
-# added since wallust sometimes not applying
-killall -SIGUSR2 waybar 
-
-# quit ags & relaunch ags
-ags -q && ags &
-
-# some process to kill
-for pid in $(pidof waybar rofi swaync ags swaybg); do
-    kill -SIGUSR1 "$pid"
-done
-
-#Restart waybar
+# Restart waybar
 sleep 1
 waybar &
 
