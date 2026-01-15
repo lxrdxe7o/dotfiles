@@ -24,8 +24,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/home/xero/.local/bin:$PATH"
 
-# export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
-# export PATH=$JAVA_HOME/bin:$PATH
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
+export PATH=$JAVA_HOME/bin:$PATH
 
 plugins=(
     F-Sy-H 
