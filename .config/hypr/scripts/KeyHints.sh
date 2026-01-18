@@ -5,69 +5,120 @@
 BACKEND=wayland
 
 # Check if rofi or yad is running and kill them if they are
-if pidof rofi > /dev/null; then
+if pidof rofi >/dev/null; then
   pkill rofi
 fi
 
-if pidof yad > /dev/null; then
+if pidof yad >/dev/null; then
   pkill yad
+  exit 0
 fi
 
 # Launch yad with calculated width and height
 GDK_BACKEND=$BACKEND yad \
-    --center \
-    --title="KooL Quick Cheat Sheet" \
-    --no-buttons \
-    --list \
-    --column=Key: \
-    --column=Description: \
-    --column=Command: \
-    --timeout-indicator=bottom \
-"ESC" "close this app" "" " = " "SUPER KEY (Windows Key Button)" "(SUPER KEY)" \
-" SHIFT K" "Searchable Keybinds" "(Search all Keybinds via rofi)" \
-" SHIFT E" "KooL Hyprland Settings Menu" "" \
-"" "" "" \
-" enter" "Terminal" "(kitty)" \
-" SHIFT p" "Power-profile" "(asusctl profile -n)" \
-" ALT enter" "Alternate Terminal" "(ghostty)" \
-" SHIFT enter" "DropDown Terminal" " Q to close" \
-" B" "Launch Browser" "(Default browser)" \
-" A" "Desktop Overview" "(rofi)" \
-" D" "Application Launcher" "(rofi-wayland)" \
-" E" "Open File Manager" "(Thunar)" \
-" S" "Google Search using rofi" "(rofi)" \
-" Q" "close active window" "(not kill)" \
-" Shift Q " "kills an active window" "(kill)" \
-" ALT mouse scroll up/down   " "Desktop Zoom" "Desktop Magnifier" \
-" Alt V" "Clipboard Manager" "(cliphist)" \
-" W" "Choose wallpaper" "(Wallpaper Menu)" \
-" Shift W" "Choose wallpaper effects" "(imagemagick + swww)" \
-"CTRL ALT W" "Random wallpaper" "(via swww)" \
-" CTRL ALT B" "Hide/UnHide Waybar" "waybar" \
-" CTRL B" "Choose waybar styles" "(waybar styles)" \
-" ALT B" "Choose waybar layout" "(waybar layout)" \
-" ALT R" "Reload Waybar swaync Rofi" "CHECK NOTIFICATION FIRST!!!" \
-" SHIFT N" "Launch Notification Panel" "swaync Notification Center" \
-" Print" "screenshot" "(grim)" \
-" Shift Print" "screenshot region" "(grim + slurp)" \
-" Shift S" "screenshot region" "(swappy)" \
-" CTRL Print" "screenshot timer 5 secs " "(grim)" \
-" CTRL SHIFT Print" "screenshot timer 10 secs " "(grim)" \
-"ALT Print" "Screenshot active window" "active window only" \
-" CTRL P" "power-menu" "(wlogout)" \
-" CTRL L" "screen lock" "(hyprlock)" \
-"CTRL ALT Del" "Hyprland Exit" "(NOTE: Hyprland Will exit immediately)" \
-" SHIFT F" "Fullscreen" "Toggles to full screen" \
-" CTL F" "Fake Fullscreen" "Toggles to fake full screen" \
-" ALT L" "Toggle Dwindle | Master Layout" "Hyprland Layout" \
-" SPACEBAR" "Toggle float" "single window" \
-" ALT SPACEBAR" "Toggle all windows to float" "all windows" \
-" ALT O" "Toggle Blur" "normal or less blur" \
-" CTRL O" "Toggle Opaque ON or OFF" "on active window only" \
-" Shift A" "Animations Menu" "Choose Animations via rofi" \
-" CTRL R" "Rofi Themes Menu" "Choose Rofi Themes via rofi" \
-" CTRL Shift R" "Rofi Themes Menu v2" "Choose Rofi Themes via Theme Selector (modified)" \
-" SHIFT G" "Gamemode! All animations OFF or ON" "toggle" \
-" ALT E" "Rofi Emoticons" "Emoticon" \
-" H" "Launch this Quick Cheat Sheet" "" \
-"" "" "" \
+  --center \
+  --title="KooL Quick Cheat Sheet" \
+  --no-buttons \
+  --list \
+  --column=Key: \
+  --column=Description: \
+  --column=Command: \
+  --timeout-indicator=bottom \
+  "ESC" "close this app" "" \
+  "" "SUPER KEY (Windows Key)" "" \
+  " SHIFT K" "Searchable Keybinds" "(Search all Keybinds via rofi)" \
+  " SHIFT E" "KooL Hyprland Settings Menu" "" \
+  "" "" "" \
+  "───────────────" "APPS & LAUNCHERS" "───────────────" \
+  " Return" "Terminal" "(kitty)" \
+  " ALT Return" "Terminal + tmux" "(kitty --hold tmux attach)" \
+  " SHIFT Return" "Floating Terminal" "(centered)" \
+  " D" "Application Launcher" "(rofi)" \
+  " A" "Desktop Overview" "(quickshell expose)" \
+  " E" "File Manager" "(thunar)" \
+  " B" "Default Browser" "(xdg-open)" \
+  " S" "Google Search" "(rofi)" \
+  "" "" "" \
+  "───────────────" "WINDOW MANAGEMENT" "───────────────" \
+  " Q" "Close Active Window" "(not kill)" \
+  " SHIFT Q" "Kill Active Process" "(force kill)" \
+  " SHIFT F" "Fullscreen" "(toggle)" \
+  " CTRL F" "Fake Fullscreen" "(toggle)" \
+  " SPACE" "Toggle Float" "(single window)" \
+  " ALT SPACE" "Toggle All Float" "(all windows)" \
+  " G" "Toggle Group" "(window group)" \
+  " CTRL Tab" "Change Group Active" "" \
+  "ALT Tab" "Cycle Windows" "(bring to top)" \
+  "" "" "" \
+  "───────────────" "LAYOUTS" "───────────────" \
+  " ALT L" "Toggle Layout" "(Master/Dwindle)" \
+  " I" "Add Master" "(master layout)" \
+  " CTRL D" "Remove Master" "(master layout)" \
+  " J / K" "Cycle Next/Prev" "(master layout)" \
+  " CTRL Return" "Swap with Master" "(master layout)" \
+  " SHIFT I" "Toggle Split" "(dwindle layout)" \
+  " P" "Pseudo" "(dwindle layout)" \
+  " M" "Split Ratio 0.3" "" \
+  "" "" "" \
+  "───────────────" "MOVE & RESIZE" "───────────────" \
+  " Arrows" "Move Focus" "(left/right/up/down)" \
+  " SHIFT Arrows" "Resize Window" "(±50 pixels)" \
+  " CTRL Arrows" "Move Window" "(to direction)" \
+  " ALT Arrows" "Swap Window" "(with neighbor)" \
+  " + Left Click" "Move Window" "(drag)" \
+  " + Right Click" "Resize Window" "(drag)" \
+  "" "" "" \
+  "───────────────" "WORKSPACES" "───────────────" \
+  " 1-0" "Switch Workspace" "(1-10)" \
+  " SHIFT 1-0" "Move Window to Workspace" "(follow)" \
+  " CTRL 1-0" "Move Window Silently" "(stay)" \
+  " Tab" "Next Workspace" "" \
+  " SHIFT Tab" "Previous Workspace" "" \
+  " Mouse Scroll" "Scroll Workspaces" "" \
+  " , / ." "Prev/Next Workspace" "(comma/period)" \
+  " SHIFT [ / ]" "Move to Prev/Next WS" "(follow)" \
+  " CTRL [ / ]" "Move Silently" "(stay)" \
+  " U" "Toggle Special WS" "" \
+  " SHIFT U" "Move to Special WS" "" \
+  "" "" "" \
+  "───────────────" "SCREENSHOTS" "───────────────" \
+  " Print" "Screenshot" "(full screen)" \
+  " SHIFT Print" "Screenshot Region" "(select area)" \
+  " SHIFT S" "Screenshot + Edit" "(swappy)" \
+  " CTRL Print" "Screenshot 5s Delay" "" \
+  " CTRL SHIFT Print" "Screenshot 10s Delay" "" \
+  "ALT Print" "Screenshot Active Window" "" \
+  "" "" "" \
+  "───────────────" "THEMING & APPEARANCE" "───────────────" \
+  " W" "Wallpaper Select" "(choose wallpaper)" \
+  " SHIFT W" "Wallpaper Effects" "(imagemagick + swww)" \
+  "CTRL ALT W" "Random Wallpaper" "(via swww)" \
+  " CTRL ALT B" "Hide/Unhide Waybar" "(toggle)" \
+  " CTRL B" "Waybar Styles" "(style menu)" \
+  " ALT B" "Waybar Layout" "(layout menu)" \
+  " ALT R" "Refresh All" "(waybar, swaync, rofi)" \
+  " SHIFT A" "Animations Menu" "(choose animations)" \
+  " CTRL R" "Rofi Theme Selector" "" \
+  " CTRL SHIFT R" "Rofi Theme Selector v2" "(modified)" \
+  " ALT O" "Toggle Blur" "(normal/less)" \
+  " CTRL O" "Toggle Opaque" "(active window)" \
+  " SHIFT O" "Zsh Theme Change" "(oh-my-zsh)" \
+  "" "" "" \
+  "───────────────" "UTILITIES" "───────────────" \
+  " N" "Night Mode Toggle" "(hyprsunset)" \
+  " ALT E" "Emoji Menu" "(rofi)" \
+  " ALT V" "Clipboard Manager" "(cliphist)" \
+  " ALT C" "Calculator" "(qalculate)" \
+  " SHIFT M" "Online Music" "(RofiBeats)" \
+  " SHIFT N" "Notification Panel" "(swaync)" \
+  " SHIFT P" "Power Profile" "(cycle profiles)" \
+  " SHIFT G" "Game Mode" "(toggle animations)" \
+  " ALT Mouse Scroll" "Desktop Zoom" "(magnifier)" \
+  "ALT SHIFT" "Switch Keyboard Layout" "" \
+  "" "" "" \
+  "───────────────" "SYSTEM" "───────────────" \
+  " CTRL L" "Lock Screen" "(hyprlock)" \
+  " CTRL P" "Power Menu" "(wlogout)" \
+  "CTRL ALT Delete" "Exit Hyprland" "(immediate)" \
+  " H" "This Help Menu" "" \
+  "" "" ""
