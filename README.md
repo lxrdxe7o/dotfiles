@@ -55,67 +55,318 @@ _Screenshots coming soon..._
 
 ## Dependencies
 
-### Quick Install (Arch Linux)
+### Quick Install (Essentials Only)
 
 ```bash
 # Core Hyprland ecosystem
-sudo pacman -S hyprland hypridle hyprlock xdg-desktop-portal-hyprland
+sudo pacman -S hyprland hypridle hyprlock xdg-desktop-portal-hyprland aquamarine hyprcursor hyprgraphics hyprlang hyprutils hyprwayland-scanner hyprpolkitagent hyprsunset hyprtoolkit hyprwire hyprland-guiutils
 
 # Wayland utilities
-sudo pacman -S wl-clipboard cliphist grim slurp swappy
+sudo pacman -S wl-clipboard cliphist grim slurp swappy swww xwayland-satellite
 
 # Audio/Media
-sudo pacman -S pipewire pipewire-pulse wireplumber pamixer playerctl
+sudo pacman -S pipewire-alsa pipewire-pulse wireplumber pamixer playerctl
 
 # Notifications & Bar
-sudo pacman -S swaync waybar rofi-wayland
+sudo pacman -S swaync waybar rofi
 
 # System utilities
-sudo pacman -S jq polkit-gnome network-manager-applet blueman brightnessctl
+sudo pacman -S network-manager-applet blueman brightnessctl power-profiles-daemon
 
 # File manager & Terminal
-sudo pacman -S thunar kitty
+sudo pacman -S thunar kitty ghostty alacritty
 
 # Theming
-sudo pacman -S kvantum qt5ct qt6ct nwg-look nwg-displays
+sudo pacman -S kvantum qt5ct qt6ct nwg-look nwg-displays wallust
 
 # Fonts
-sudo pacman -S ttf-jetbrains-mono-nerd ttf-meslo-nerd otf-font-awesome
+sudo pacman -S ttf-jetbrains-mono-nerd ttf-meslo-nerd otf-font-awesome ttf-firacode-nerd
 
 # Shell & CLI tools
-sudo pacman -S zsh fzf zoxide atuin lsd lazygit tmux neovim
-
-# GTK themes & icons (optional but recommended)
-sudo pacman -S papirus-icon-theme
+sudo pacman -S zsh fish nushell zoxide atuin lsd lazygit tmux neovim starship ripgrep yazi
 ```
 
 ### AUR Packages (via yay/paru)
 
 ```bash
-# Wallpaper tools
-yay -S swww wallust
+# Install AUR helper first
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si && cd .. && rm -rf yay-bin
 
-# Extra fonts & tools
-yay -S pokemon-colorscripts-git bibata-cursor-theme flat-remix-gtk
-
-# Optional: Quickshell for window overview
-yay -S quickshell-git
+# Essential AUR packages
+yay -S swww wallust pokemon-colorscripts-git matugen-git ttf-material-symbols-variable-git aylurs-gtk-shell-git quickshell ghostty zen-browser-bin
 ```
 
-### Full One-Liner Install
+### Complete AUR Package List
+
+All AUR/foreign packages installed via yay/paru:
 
 ```bash
-# Pacman packages
-sudo pacman -S --needed hyprland hypridle hyprlock xdg-desktop-portal-hyprland \
-    wl-clipboard cliphist grim slurp swappy pipewire pipewire-pulse wireplumber \
-    pamixer playerctl swaync waybar rofi-wayland jq polkit-gnome \
-    network-manager-applet blueman brightnessctl thunar kitty kvantum qt5ct qt6ct \
-    nwg-look nwg-displays ttf-jetbrains-mono-nerd ttf-meslo-nerd otf-font-awesome \
-    zsh fzf zoxide atuin lsd lazygit tmux neovim papirus-icon-theme
-
-# AUR packages (using yay)
-yay -S --needed swww wallust pokemon-colorscripts-git bibata-cursor-theme
+yay -S --needed \
+  ani-cli \
+  antigravity \
+  aylurs-gtk-shell-git \
+  eclipse-java-bin \
+  fish-done \
+  fresh-editor \
+  gem \
+  ghostmirror \
+  ghostty \
+  github-desktop-bin \
+  gtk-engine-murrine \
+  jetbrains-toolbox \
+  libastal-apps-git \
+  libastal-battery-git \
+  libastal-bluetooth-git \
+  libastal-cava-git \
+  libastal-hyprland-git \
+  libastal-mpris-git \
+  libastal-network-git \
+  libastal-notifd-git \
+  libastal-powerprofiles-git \
+  libastal-tray-git \
+  libastal-wireplumber-git \
+  linutil-git \
+  matugen-git \
+  mpvpaper \
+  opencode-bin \
+  pokemon-colorscripts-git \
+  spotify \
+  ttf-material-symbols-variable-git \
+  ttf-ms-win11-auto \
+  ttf-victor-mono \
+  visual-studio-code-bin \
+  visual-studio-code-insiders-bin \
+  wallust \
+  wazuh-agent \
+  webapp-manager \
+  wlrobs-hg \
+  zen-browser-bin
 ```
+
+<details>
+<summary><b>AUR Packages by Category</b></summary>
+
+| Category | Packages |
+|----------|----------|
+| **Shells & Widgets** | `aylurs-gtk-shell-git`, `libastal-*-git` (12 packages), `matugen-git` |
+| **Terminals** | `ghostty` |
+| **Browsers** | `zen-browser-bin` |
+| **IDEs & Editors** | `visual-studio-code-bin`, `visual-studio-code-insiders-bin`, `opencode-bin`, `eclipse-java-bin`, `jetbrains-toolbox`, `fresh-editor` |
+| **Dev Tools** | `github-desktop-bin`, `gem` |
+| **Media** | `spotify`, `mpvpaper`, `wlrobs-hg`, `ani-cli` |
+| **Theming** | `wallust`, `gtk-engine-murrine`, `pokemon-colorscripts-git` |
+| **Fonts** | `ttf-material-symbols-variable-git`, `ttf-ms-win11-auto`, `ttf-victor-mono` |
+| **Utilities** | `linutil-git`, `webapp-manager`, `ghostmirror`, `antigravity`, `fish-done` |
+| **Security** | `wazuh-agent` |
+
+</details>
+
+---
+
+## Full Environment Replication
+
+To create an **exact copy** of my development environment, use the package lists below.
+
+### Method 1: One-Command Install (Recommended)
+
+```bash
+# Install yay first if not present
+sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si && cd .. && rm -rf yay-bin
+
+# Install ALL official repo packages
+sudo pacman -S --needed 7zip accountsservice adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts alacritty alsa-firmware alsa-plugins alsa-utils aquamarine asusctl atuin awesome-terminal-fonts base base-devel bash-completion bc bind blueman bluez bluez-hid2hci bluez-libs bluez-utils brightnessctl btop btrfs-assistant btrfs-progs calf cava chromium cliphist cmake cmatrix cpupower cryptsetup dart-sass dbeaver ddcutil device-mapper dhclient dialog diffutils discord distrobox dmidecode dmraid dnsmasq docker docker-compose dosfstools duf e2fsprogs easyeffects efibootmgr efitools ethtool evolution-data-server exfatprogs f2fs-tools ffmpegthumbnailer flatpak freecad freerdp gimp git git-lfs github-cli gjs glances glfw glib2-devel gnome-system-monitor go greetd greetd-tuigreet grim grub grub-hook gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-ugly gvfs gvfs-mtp haveged hdparm htop hwdetect hwinfo hyprcursor hyprgraphics hypridle hyprland hyprland-guiutils hyprlang hyprlock hyprpolkitagent hyprsunset hyprtoolkit hyprutils hyprwayland-scanner hyprwire impala inetutils inkscape intel-media-driver intel-media-sdk intel-ucode iptables-nft iwd jdk17-openjdk jdk21-openjdk jfsutils kdeconnect ki18n5 kitty knotifications5 kvantum kwidgetsaddons5 kwindowsystem5 lazygit less lib32-libva-intel-driver lib32-mesa lib32-opencl-mesa lib32-vulkan-intel libdvdcss libgsf libopenraw librecad libreoffice-fresh libspng libva-utils libvirt libwnck3 libxcrypt-compat linux-cachyos linux-cachyos-headers linux-firmware localsend logrotate loupe lsb-release lsd lsp-plugins lsscsi lvm2 man-db man-pages mdadm meld mercurial mesa-utils meson micro mkinitcpio modemmanager mousepad mpv mpv-mpris mtools nano nano-syntax-highlighting ncdu neovim netctl network-manager-applet networkmanager networkmanager-openvpn nfs-utils nilfs-utils niri noctalia-shell noisetorch noto-color-emoji-fontconfig noto-fonts noto-fonts-cjk noto-fonts-emoji nss-mdns ntp nushell nvtop nwg-displays nwg-look obs-studio obs-vaapi obs-vkcapture obsidian octopi okular openbsd-netcat opencl-mesa opendesktop-fonts openssh os-prober otf-font-awesome pacman-contrib pamixer paru pavucontrol perl pipewire-alsa pipewire-pulse playerctl plocate plymouth podman podman-compose polkit-kde-agent poppler-glib power-profiles-daemon pv python python-defusedxml python-flask python-flask-cors python-mysql-connector python-packaging python-pip python-pipx python-pyquery python-requests qalculate-gtk qbittorrent qemu-desktop qemu-emulators-full qpdf qt5ct qt6ct quickshell rebuild-detector reflector ripgrep rofi rsync rtkit rust s-nail samba sg3_utils slurp smartmontools snapper sof-firmware spotify-player starship stow sudo swappy swaync swtpm swww sysfsutils telegram-desktop terminus-font texinfo thunar thunar-archive-plugin thunar-volman thunderbird timeshift tmux ttf-bitstream-vera ttf-dejavu ttf-droid ttf-fira-code ttf-firacode-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-liberation ttf-meslo-nerd ttf-opensans tumbler typescript udftools ufw umockdev unrar unzip upower usb_modeswitch usbutils uwsm v4l2loopback-dkms vala vesktop vi vim virt-manager vlc vulkan-headers vulkan-intel waybar weechat wget which wine winetricks wireless-regdb wireplumber wlogout wlsunset wpa_supplicant xarchiver xdg-desktop-portal-gnome xdg-desktop-portal-gtk xdg-desktop-portal-hyprland xdg-user-dirs xf86-input-libinput xfsprogs xfwm4 xl2tpd xorg-server xorg-xdpyinfo xorg-xhost xorg-xinit xorg-xinput xorg-xkill xorg-xrandr xwayland-satellite yad yarn yazi yt-dlp zathura zathura-pdf-poppler zed zoxide
+
+# Install ALL AUR packages
+yay -S --needed ani-cli antigravity aylurs-gtk-shell-git eclipse-java-bin fish-done fresh-editor gem ghostmirror ghostty github-desktop-bin gtk-engine-murrine jetbrains-toolbox libastal-apps-git libastal-battery-git libastal-bluetooth-git libastal-cava-git libastal-hyprland-git libastal-mpris-git libastal-network-git libastal-notifd-git libastal-powerprofiles-git libastal-tray-git libastal-wireplumber-git linutil-git matugen-git mpvpaper opencode-bin pokemon-colorscripts-git spotify ttf-material-symbols-variable-git ttf-ms-win11-auto ttf-victor-mono visual-studio-code-bin visual-studio-code-insiders-bin wallust wazuh-agent webapp-manager wlrobs-hg zen-browser-bin
+```
+
+### Method 2: Using Package Lists
+
+Save the package lists to files and install from them:
+
+```bash
+# Export current packages (for reference/backup)
+pacman -Qqen > pkglist-official.txt   # Official repo packages
+pacman -Qqem > pkglist-aur.txt        # AUR packages
+
+# Install from package lists
+sudo pacman -S --needed - < pkglist-official.txt
+yay -S --needed - < pkglist-aur.txt
+```
+
+### Method 3: Clone This Repo's Package Lists
+
+Package lists are included in this repository:
+
+```bash
+# Clone the repo
+git clone https://github.com/xero/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+
+# Install all packages
+sudo pacman -S --needed - < pkglist-official.txt
+yay -S --needed - < pkglist-aur.txt
+```
+
+### CachyOS-Specific Packages
+
+This setup uses [CachyOS](https://cachyos.org/) packages. If on vanilla Arch, skip or substitute these:
+
+```bash
+# CachyOS packages (skip on vanilla Arch)
+cachy-browser cachyos-fish-config cachyos-hello cachyos-hooks cachyos-kernel-manager cachyos-keyring cachyos-micro-settings cachyos-mirrorlist cachyos-packageinstaller cachyos-plymouth-theme cachyos-rate-mirrors cachyos-settings cachyos-v3-mirrorlist cachyos-v4-mirrorlist cachyos-wallpapers cachyos-zsh-config linux-cachyos linux-cachyos-headers
+```
+
+### Packages by Category
+
+<details>
+<summary><b>Core System</b></summary>
+
+```
+base base-devel linux-cachyos linux-cachyos-headers linux-firmware intel-ucode
+mkinitcpio grub grub-hook efibootmgr efitools cryptsetup lvm2 btrfs-progs
+device-mapper dosfstools e2fsprogs exfatprogs f2fs-tools jfsutils xfsprogs
+nilfs-utils udftools mtools snapper timeshift btrfs-assistant
+```
+</details>
+
+<details>
+<summary><b>Hyprland & Wayland</b></summary>
+
+```
+hyprland aquamarine hyprcursor hyprgraphics hypridle hyprland-guiutils hyprlang
+hyprlock hyprpolkitagent hyprsunset hyprtoolkit hyprutils hyprwayland-scanner
+hyprwire niri xwayland-satellite uwsm xdg-desktop-portal-hyprland
+xdg-desktop-portal-gtk xdg-desktop-portal-gnome cliphist grim slurp swappy
+swww wlogout wlsunset
+```
+</details>
+
+<details>
+<summary><b>Desktop Environment</b></summary>
+
+```
+waybar rofi swaync thunar thunar-archive-plugin thunar-volman tumbler
+ffmpegthumbnailer nwg-look nwg-displays kvantum qt5ct qt6ct polkit-kde-agent
+gvfs gvfs-mtp xarchiver loupe okular mousepad
+```
+</details>
+
+<details>
+<summary><b>Terminals & Shells</b></summary>
+
+```
+kitty ghostty alacritty tmux zsh fish nushell starship atuin zoxide lsd
+bash-completion nano nano-syntax-highlighting micro vim neovim
+```
+</details>
+
+<details>
+<summary><b>Development Tools</b></summary>
+
+```
+git git-lfs github-cli lazygit mercurial stow ripgrep plocate
+cmake meson rust go python python-pip python-pipx typescript yarn
+jdk17-openjdk jdk21-openjdk dbeaver docker docker-compose podman podman-compose
+virt-manager libvirt qemu-desktop qemu-emulators-full swtpm distrobox
+visual-studio-code-bin visual-studio-code-insiders-bin zed jetbrains-toolbox
+opencode-bin eclipse-java-bin
+```
+</details>
+
+<details>
+<summary><b>Audio & Media</b></summary>
+
+```
+pipewire-alsa pipewire-pulse wireplumber pamixer playerctl pavucontrol
+easyeffects calf lsp-plugins noisetorch mpv mpv-mpris mpvpaper vlc
+obs-studio obs-vaapi obs-vkcapture v4l2loopback-dkms wlrobs-hg
+cava spotify spotify-player yt-dlp
+```
+</details>
+
+<details>
+<summary><b>Graphics & Design</b></summary>
+
+```
+gimp inkscape freecad librecad libreoffice-fresh loupe okular zathura
+zathura-pdf-poppler qpdf
+```
+</details>
+
+<details>
+<summary><b>Networking & Communication</b></summary>
+
+```
+networkmanager networkmanager-openvpn network-manager-applet blueman bluez
+bluez-utils bluez-libs bluez-hid2hci kdeconnect localsend telegram-desktop
+discord vesktop thunderbird weechat openssh openbsd-netcat wget iwd
+wpa_supplicant modemmanager dhclient dnsmasq samba nfs-utils
+```
+</details>
+
+<details>
+<summary><b>Browsers</b></summary>
+
+```
+cachy-browser chromium zen-browser-bin
+```
+</details>
+
+<details>
+<summary><b>Fonts</b></summary>
+
+```
+ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-meslo-nerd ttf-firacode-nerd
+ttf-fira-code ttf-victor-mono otf-font-awesome ttf-material-symbols-variable-git
+ttf-bitstream-vera ttf-dejavu ttf-droid ttf-liberation ttf-opensans
+ttf-ms-win11-auto adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts
+adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts opendesktop-fonts
+noto-fonts noto-fonts-cjk noto-fonts-emoji noto-color-emoji-fontconfig
+awesome-terminal-fonts terminus-font
+```
+</details>
+
+<details>
+<summary><b>System Utilities</b></summary>
+
+```
+btop htop nvtop glances ncdu duf brightnessctl ddcutil cpupower
+power-profiles-daemon upower ufw iptables-nft reflector pacman-contrib
+rebuild-detector paru yay-bin octopi flatpak 7zip unrar unzip rsync pv
+smartmontools hdparm lsscsi sg3_utils hwinfo hwdetect dmidecode lsb-release
+```
+</details>
+
+<details>
+<summary><b>Theming & Customization</b></summary>
+
+```
+wallust matugen-git aylurs-gtk-shell-git quickshell noctalia-shell
+libastal-apps-git libastal-battery-git libastal-bluetooth-git libastal-cava-git
+libastal-hyprland-git libastal-mpris-git libastal-network-git libastal-notifd-git
+libastal-powerprofiles-git libastal-tray-git libastal-wireplumber-git
+gtk-engine-murrine pokemon-colorscripts-git
+```
+</details>
+
+<details>
+<summary><b>ASUS ROG Laptop (Optional)</b></summary>
+
+```
+asusctl supergfxctl rog-control-center
+```
+</details>
+
+<details>
+<summary><b>Gaming & Wine</b></summary>
+
+```
+wine winetricks lib32-mesa lib32-vulkan-intel lib32-opencl-mesa
+lib32-libva-intel-driver vulkan-intel vulkan-headers opencl-mesa
+```
+</details>
 
 ## Installation
 
@@ -214,6 +465,8 @@ dotfiles/
 │   └── fastfetch/               # System info display
 ├── .zshrc                       # Zsh configuration
 ├── .zprofile                    # Zsh profile
+├── pkglist-official.txt         # Official repo packages (353 packages)
+├── pkglist-aur.txt              # AUR packages (36 packages)
 └── README.md                    # This file
 ```
 
