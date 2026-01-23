@@ -1,0 +1,11 @@
+# Binary
+dotfiles-installer
+
+# Go build cache
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out

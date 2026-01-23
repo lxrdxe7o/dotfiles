@@ -22,5 +22,8 @@ node_modules
 \.vscode
 \.idea
 
+# Installer
+installer
+
 # Stow
 \.stow-local-ignore
