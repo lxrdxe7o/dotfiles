@@ -1,6 +1,6 @@
 # Fastfetch
 #fastfetch -c {$HOME}/.config/fastfetch/config-compact.jsonc
-pokemon-colorscripts --no-title -s -r | fastfetch -c {$HOME}/.config/fastfetch/config-compact.jsonc --logo-type file-raw --logo-height 6 --logo-width 5 --logo -
+#pokemon-colorscripts --no-title -s -r | fastfetch -c {$HOME}/.config/fastfetch/config-compact.jsonc --logo-type file-raw --logo-height 6 --logo-width 5 --logo -
 
 zoxide init fish | source
 starship init fish | source
