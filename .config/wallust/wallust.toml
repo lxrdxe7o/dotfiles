@@ -55,6 +55,9 @@ kitty.target = '~/.config/kitty/kitty-themes/01-Wallust.conf'
 swaync.template = 'colors-swaync.css'
 swaync.target = '~/.config/swaync/wallust/colors-wallust.css'
 
+lazygit.template = 'colors-lazygit.yml'
+lazygit.target = '~/.config/lazygit/config.yml'
+
 #macchina.template = 'colors-macchina.toml'
 #macchina.target = '~/.config/macchina/themes/wallust.toml'
 

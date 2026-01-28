@@ -4,23 +4,35 @@ set -euo pipefail
 
 iDIR="$HOME/.config/swaync/icons"
 
-# Switch to next profile
-asusctl profile -n
+# Get current profile and cycle to next
+CURRENT=$(powerprofilesctl get)
+
+case "$CURRENT" in
+    performance)
+        powerprofilesctl set balanced
+        ;;
+    balanced)
+        powerprofilesctl set power-saver
+        ;;
+    power-saver)
+        powerprofilesctl set performance
+        ;;
+esac
 
 # Get the new active profile
-PROFILE=$(asusctl profile -p 2>/dev/null | grep "Active profile" | awk '{print $NF}')
+PROFILE=$(powerprofilesctl get)
 
 # Set icon and message based on profile
 case "$PROFILE" in
-    Performance)
+    performance)
         ICON="$iDIR/power.png"
         MSG="Maximum performance"
         ;;
-    Balanced)
+    balanced)
         ICON="$iDIR/power.png"
         MSG="Balanced power & performance"
         ;;
-    Quiet|LowPower)
+    power-saver)
         ICON="$iDIR/battery-quarter-solid.svg"
         MSG="Power saving mode"
         ;;

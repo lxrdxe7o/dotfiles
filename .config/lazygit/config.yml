@@ -1,0 +1,27 @@
+#  One thing to note: since wallust will overwrite the entire
+#  config.yml, if you add other lazygit settings later (keybindings,
+#  git options, etc.), add them to the template file at
+#  .config/wallust/templates/colors-lazygit.yml rather than editing
+#  config.yml directly.
+# wallust template - colors-lazygit
+gui:
+  theme:
+    activeBorderColor:
+      - "#0F1412"
+      - bold
+    inactiveBorderColor:
+      - "#697562"
+    optionsTextColor:
+      - "#0F1412"
+    selectedLineBgColor:
+      - "#697562"
+    cherryPickedCommitBgColor:
+      - "#0D1312"
+    cherryPickedCommitFgColor:
+      - "#BBC8B5"
+    unstagedChangesColor:
+      - "#0B0F11"
+    defaultFgColor:
+      - "#BBC8B5"
+    searchingActiveBorderColor:
+      - "#21331B"
