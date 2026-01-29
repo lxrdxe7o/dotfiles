@@ -16,6 +16,7 @@ Based on [JaKooLit's Hyprland-Dots](https://github.com/JaKooLit/Hyprland-Dots) w
 - [Dependencies](#dependencies)
 - [Installer TUI](#installer-tui)
 - [Installation](#installation)
+- [Uninstall / Clean Slate](#uninstall--clean-slate)
 - [File Structure](#file-structure)
 - [Keybindings](#keybindings)
 - [Customization](#customization)
@@ -548,6 +549,45 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```bash
 reboot
 ```
+
+## Uninstall / Clean Slate
+
+To remove all files and folders that stow manages (before a fresh install or to undo stow):
+
+```bash
+# Unstow (remove symlinks created by stow)
+cd ~/dotfiles
+stow -D .
+
+# Or manually remove all stow-managed files and directories
+rm -f ~/.bashrc ~/.zshrc ~/.zprofile
+rm -rf ~/.config/ags \
+       ~/.config/fastfetch \
+       ~/.config/fish \
+       ~/.config/ghostty \
+       ~/.config/gtk-3.0 \
+       ~/.config/gtk-4.0 \
+       ~/.config/hypr \
+       ~/.config/kitty \
+       ~/.config/lazygit \
+       ~/.config/nushell \
+       ~/.config/nwg-displays \
+       ~/.config/nwg-look \
+       ~/.config/qt5ct \
+       ~/.config/qt6ct \
+       ~/.config/rofi \
+       ~/.config/swaync \
+       ~/.config/tmux \
+       ~/.config/uwsm \
+       ~/.config/wallust \
+       ~/.config/waybar \
+       ~/.config/wlogout \
+       ~/.config/xdg-desktop-portal \
+       ~/.config/zathura
+sudo rm -rf /etc/greetd
+```
+
+> **Warning**: This will delete your local configuration. Back up anything you've customized first (see [Backup Existing Configs](#2-backup-existing-configs)).
 
 ## File Structure
 
