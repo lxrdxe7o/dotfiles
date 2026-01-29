@@ -12,6 +12,36 @@ import (
 	"dotfiles-installer/internal/executor"
 )
 
+// criticalPackages are packages required for the desktop to function.
+// If any of these fail to install, the stage errors out.
+// Non-critical packages that fail are skipped with a warning.
+var criticalPackages = map[string]bool{
+	// core system
+	"base": true, "base-devel": true, "git": true, "sudo": true,
+	"linux-cachyos": true, "linux-cachyos-headers": true, "linux-firmware": true,
+	// hyprland desktop
+	"hyprland": true, "hyprlock": true, "hypridle": true, "hyprpolkitagent": true,
+	"aquamarine": true, "hyprlang": true, "hyprutils": true, "hyprcursor": true,
+	"hyprwayland-scanner": true, "xdg-desktop-portal-hyprland": true,
+	// shell & terminal
+	"kitty": true, "ghostty": true, "stow": true,
+	// bar, launcher, notifications
+	"waybar": true, "rofi": true, "swaync": true,
+	// wallpaper & theming
+	"swww": true,
+	// audio
+	"pipewire-alsa": true, "pipewire-pulse": true, "wireplumber": true,
+	// networking
+	"networkmanager": true, "openssh": true,
+	// display
+	"greetd": true, "greetd-tuigreet": true, "uwsm": true,
+}
+
+// isCriticalPackage checks whether a package is required for the desktop to work
+func isCriticalPackage(pkg string) bool {
+	return criticalPackages[pkg]
+}
+
 // CreateAllStages creates all installation stages
 func CreateAllStages(cfg *config.Config, paths *config.Paths) *StageList {
 	list := NewStageList()
@@ -163,19 +193,75 @@ func createOfficialPackagesStage(paths *config.Paths) *Stage {
 			return nil
 		}
 
-		// Use pacman with --needed to skip already installed
+		// Try batch install first (fast path)
 		args := append([]string{"-S", "--needed", "--noconfirm"}, packages...)
 		cmd := exec.CommandContext(ctx, "sudo", append([]string{"pacman"}, args...)...)
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
 		cmd.Stdin = os.Stdin
 
-		if err := cmd.Run(); err != nil {
-			return fmt.Errorf("pacman failed: %w", err)
+		if err := cmd.Run(); err == nil {
+			progress <- ProgressUpdate{
+				Message: "All packages installed",
+				Current: len(packages),
+				Total:   len(packages),
+			}
+			return nil
+		}
+
+		// Batch failed (dependency conflicts), fall back to individual installs
+		progress <- ProgressUpdate{
+			Message: "Batch install had conflicts, resolving individually...",
+		}
+
+		var skipped []string
+		var criticalFailed []string
+		for i, pkg := range packages {
+			select {
+			case <-ctx.Done():
+				return ctx.Err()
+			default:
+			}
+
+			progress <- ProgressUpdate{
+				Message:  fmt.Sprintf("Installing %s...", pkg),
+				Current:  i + 1,
+				Total:    len(packages),
+				ItemName: pkg,
+			}
+
+			// First try normal install
+			cmd := exec.CommandContext(ctx, "sudo", "pacman", "-S", "--needed", "--noconfirm", pkg)
+			if err := cmd.Run(); err != nil {
+				// Retry with --overwrite to resolve file conflicts
+				cmd = exec.CommandContext(ctx, "sudo", "pacman", "-S", "--needed", "--noconfirm", "--overwrite", "*", pkg)
+				if err := cmd.Run(); err != nil {
+					if isCriticalPackage(pkg) {
+						criticalFailed = append(criticalFailed, pkg)
+					} else {
+						skipped = append(skipped, pkg)
+					}
+				}
+			}
+		}
+
+		installed := len(packages) - len(skipped) - len(criticalFailed)
+		if len(skipped) > 0 {
+			progress <- ProgressUpdate{
+				Message: fmt.Sprintf("Skipped %d non-critical: %s",
+					len(skipped), strings.Join(skipped, ", ")),
+				Current: len(packages),
+				Total:   len(packages),
+			}
+		}
+
+		if len(criticalFailed) > 0 {
+			return fmt.Errorf("critical packages failed to install: %s",
+				strings.Join(criticalFailed, ", "))
 		}
 
 		progress <- ProgressUpdate{
-			Message: "All packages installed",
+			Message: fmt.Sprintf("Installed %d/%d packages", installed, len(packages)),
 			Current: len(packages),
 			Total:   len(packages),
 		}
@@ -219,14 +305,62 @@ func createAURPackagesStage(paths *config.Paths) *Stage {
 			helper = "paru"
 		}
 
+		// Try batch install first (fast path)
 		args := append([]string{"-S", "--needed", "--noconfirm"}, packages...)
 		cmd := exec.CommandContext(ctx, helper, args...)
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
 		cmd.Stdin = os.Stdin
 
-		if err := cmd.Run(); err != nil {
-			return fmt.Errorf("%s failed: %w", helper, err)
+		if err := cmd.Run(); err == nil {
+			return nil
+		}
+
+		// Batch failed, fall back to individual installs
+		progress <- ProgressUpdate{
+			Message: "Batch install had conflicts, resolving individually...",
+		}
+
+		var skipped []string
+		for i, pkg := range packages {
+			select {
+			case <-ctx.Done():
+				return ctx.Err()
+			default:
+			}
+
+			progress <- ProgressUpdate{
+				Message:  fmt.Sprintf("Installing %s...", pkg),
+				Current:  i + 1,
+				Total:    len(packages),
+				ItemName: pkg,
+			}
+
+			// AUR helpers handle --overwrite internally, just install individually
+			cmd := exec.CommandContext(ctx, helper, "-S", "--needed", "--noconfirm", pkg)
+			if err := cmd.Run(); err != nil {
+				// Retry with --overwrite for file conflicts
+				cmd = exec.CommandContext(ctx, helper, "-S", "--needed", "--noconfirm", "--overwrite", "*", pkg)
+				if err := cmd.Run(); err != nil {
+					skipped = append(skipped, pkg)
+				}
+			}
+		}
+
+		installed := len(packages) - len(skipped)
+		if len(skipped) > 0 {
+			progress <- ProgressUpdate{
+				Message: fmt.Sprintf("Skipped %d AUR packages: %s",
+					len(skipped), strings.Join(skipped, ", ")),
+				Current: len(packages),
+				Total:   len(packages),
+			}
+		}
+
+		progress <- ProgressUpdate{
+			Message: fmt.Sprintf("Installed %d/%d AUR packages", installed, len(packages)),
+			Current: len(packages),
+			Total:   len(packages),
 		}
 
 		return nil
