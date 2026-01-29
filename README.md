@@ -148,18 +148,18 @@ yay -S --needed \
 <details>
 <summary><b>AUR Packages by Category</b></summary>
 
-| Category | Packages |
-|----------|----------|
-| **Shells & Widgets** | `aylurs-gtk-shell-git`, `libastal-*-git` (12 packages), `matugen-git` |
-| **Terminals** | `ghostty` |
-| **Browsers** | `zen-browser-bin` |
-| **IDEs & Editors** | `visual-studio-code-bin`, `visual-studio-code-insiders-bin`, `opencode-bin`, `eclipse-java-bin`, `jetbrains-toolbox`, `fresh-editor` |
-| **Dev Tools** | `github-desktop-bin`, `gem` |
-| **Media** | `spotify`, `mpvpaper`, `wlrobs-hg`, `ani-cli` |
-| **Theming** | `wallust`, `gtk-engine-murrine`, `pokemon-colorscripts-git` |
-| **Fonts** | `ttf-material-symbols-variable-git`, `ttf-ms-win11-auto`, `ttf-victor-mono` |
-| **Utilities** | `linutil-git`, `webapp-manager`, `ghostmirror`, `antigravity`, `fish-done` |
-| **Security** | `wazuh-agent` |
+| Category             | Packages                                                                                                                             |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **Shells & Widgets** | `aylurs-gtk-shell-git`, `libastal-*-git` (12 packages), `matugen-git`                                                                |
+| **Terminals**        | `ghostty`                                                                                                                            |
+| **Browsers**         | `zen-browser-bin`                                                                                                                    |
+| **IDEs & Editors**   | `visual-studio-code-bin`, `visual-studio-code-insiders-bin`, `opencode-bin`, `eclipse-java-bin`, `jetbrains-toolbox`, `fresh-editor` |
+| **Dev Tools**        | `github-desktop-bin`, `gem`                                                                                                          |
+| **Media**            | `spotify`, `mpvpaper`, `wlrobs-hg`, `ani-cli`                                                                                        |
+| **Theming**          | `wallust`, `gtk-engine-murrine`, `pokemon-colorscripts-git`                                                                          |
+| **Fonts**            | `ttf-material-symbols-variable-git`, `ttf-ms-win11-auto`, `ttf-victor-mono`                                                          |
+| **Utilities**        | `linutil-git`, `webapp-manager`, `ghostmirror`, `antigravity`, `fish-done`                                                           |
+| **Security**         | `wazuh-agent`                                                                                                                        |
 
 </details>
 
@@ -176,10 +176,10 @@ To create an **exact copy** of my development environment, use the package lists
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si && cd .. && rm -rf yay-bin
 
 # Install ALL official repo packages
-sudo pacman -S --needed 7zip accountsservice adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts alacritty alsa-firmware alsa-plugins alsa-utils aquamarine asusctl atuin awesome-terminal-fonts base base-devel bash-completion bc bind blueman bluez bluez-hid2hci bluez-libs bluez-utils brightnessctl btop btrfs-assistant btrfs-progs calf cava chromium cliphist cmake cmatrix cpupower cryptsetup dart-sass dbeaver ddcutil device-mapper dhclient dialog diffutils discord distrobox dmidecode dmraid dnsmasq docker docker-compose dosfstools duf e2fsprogs easyeffects efibootmgr efitools ethtool evolution-data-server exfatprogs f2fs-tools ffmpegthumbnailer flatpak freecad freerdp gimp git git-lfs github-cli gjs glances glfw glib2-devel gnome-system-monitor go greetd greetd-tuigreet grim grub grub-hook gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-ugly gvfs gvfs-mtp haveged hdparm htop hwdetect hwinfo hyprcursor hyprgraphics hypridle hyprland hyprland-guiutils hyprlang hyprlock hyprpolkitagent hyprsunset hyprtoolkit hyprutils hyprwayland-scanner hyprwire impala inetutils inkscape intel-media-driver intel-media-sdk intel-ucode iptables-nft iwd jdk17-openjdk jdk21-openjdk jfsutils kdeconnect ki18n5 kitty knotifications5 kvantum kwidgetsaddons5 kwindowsystem5 lazygit less lib32-libva-intel-driver lib32-mesa lib32-opencl-mesa lib32-vulkan-intel libdvdcss libgsf libopenraw librecad libreoffice-fresh libspng libva-utils libvirt libwnck3 libxcrypt-compat linux-cachyos linux-cachyos-headers linux-firmware localsend logrotate loupe lsb-release lsd lsp-plugins lsscsi lvm2 man-db man-pages mdadm meld mercurial mesa-utils meson micro mkinitcpio modemmanager mousepad mpv mpv-mpris mtools nano nano-syntax-highlighting ncdu neovim netctl network-manager-applet networkmanager networkmanager-openvpn nfs-utils nilfs-utils niri noctalia-shell noisetorch noto-color-emoji-fontconfig noto-fonts noto-fonts-cjk noto-fonts-emoji nss-mdns ntp nushell nvtop nwg-displays nwg-look obs-studio obs-vaapi obs-vkcapture obsidian octopi okular openbsd-netcat opencl-mesa opendesktop-fonts openssh os-prober otf-font-awesome pacman-contrib pamixer paru pavucontrol perl pipewire-alsa pipewire-pulse playerctl plocate plymouth podman podman-compose polkit-kde-agent poppler-glib power-profiles-daemon pv python python-defusedxml python-flask python-flask-cors python-mysql-connector python-packaging python-pip python-pipx python-pyquery python-requests qalculate-gtk qbittorrent qemu-desktop qemu-emulators-full qpdf qt5ct qt6ct quickshell rebuild-detector reflector ripgrep rofi rsync rtkit rust s-nail samba sg3_utils slurp smartmontools snapper sof-firmware spotify-player starship stow sudo swappy swaync swtpm swww sysfsutils telegram-desktop terminus-font texinfo thunar thunar-archive-plugin thunar-volman thunderbird timeshift tmux ttf-bitstream-vera ttf-dejavu ttf-droid ttf-fira-code ttf-firacode-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-liberation ttf-meslo-nerd ttf-opensans tumbler typescript udftools ufw umockdev unrar unzip upower usb_modeswitch usbutils uwsm v4l2loopback-dkms vala vesktop vi vim virt-manager vlc vulkan-headers vulkan-intel waybar weechat wget which wine winetricks wireless-regdb wireplumber wlogout wlsunset wpa_supplicant xarchiver xdg-desktop-portal-gnome xdg-desktop-portal-gtk xdg-desktop-portal-hyprland xdg-user-dirs xf86-input-libinput xfsprogs xfwm4 xl2tpd xorg-server xorg-xdpyinfo xorg-xhost xorg-xinit xorg-xinput xorg-xkill xorg-xrandr xwayland-satellite yad yarn yazi yt-dlp zathura zathura-pdf-poppler zed zoxide
+sudo pacman -S --needed 7zip accountsservice adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts alacritty alsa-firmware alsa-plugins alsa-utils aquamarine asusctl atuin awesome-terminal-fonts base base-devel bash-completion bc bind blueman bluez bluez-hid2hci bluez-libs bluez-utils brightnessctl btop btrfs-assistant btrfs-progs calf cava chromium cliphist cmake cmatrix cpupower cryptsetup dart-sass dbeaver ddcutil device-mapper dhclient dialog diffutils discord distrobox dmidecode dmraid dnsmasq docker docker-compose dosfstools duf e2fsprogs easyeffects efibootmgr efitools ethtool evolution-data-server exfatprogs f2fs-tools ffmpegthumbnailer flatpak freecad freerdp gimp git git-lfs github-cli gjs glances glfw glib2-devel gnome-system-monitor go greetd greetd-tuigreet grim grub grub-hook gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-ugly gvfs gvfs-mtp haveged hdparm htop hwdetect hwinfo hyprcursor hyprgraphics hypridle hyprland hyprland-guiutils hyprlang hyprlock hyprpolkitagent hyprsunset hyprtoolkit hyprutils hyprwayland-scanner hyprwire impala inetutils inkscape intel-media-driver intel-media-sdk intel-ucode iptables-nft iwd jdk17-openjdk jdk21-openjdk jfsutils kdeconnect ki18n5 kitty knotifications5 kvantum kwidgetsaddons5 kwindowsystem5 lazygit less lib32-libva-intel-driver lib32-mesa lib32-opencl-mesa lib32-vulkan-intel libdvdcss libgsf libopenraw librecad libreoffice-fresh libspng libva-utils libvirt libwnck3 libxcrypt-compat linux-cachyos linux-cachyos-headers linux-firmware localsend logrotate loupe lsb-release lsd lsp-plugins lsscsi lvm2 man-db man-pages mdadm meld mercurial mesa-utils meson micro mkinitcpio modemmanager mousepad mpv mpv-mpris mtools nano nano-syntax-highlighting ncdu neovim netctl network-manager-applet networkmanager networkmanager-openvpn nfs-utils nilfs-utils niri noctalia-shell noisetorch noto-color-emoji-fontconfig noto-fonts noto-fonts-cjk noto-fonts-emoji nss-mdns ntp nushell nvtop nwg-displays nwg-look obs-studio obs-vaapi obs-vkcapture obsidian octopi okular openbsd-netcat opencl-mesa opendesktop-fonts openssh os-prober otf-font-awesome pacman-contrib pamixer paru pavucontrol perl pipewire-alsa pipewire-pulse playerctl plocate plymouth podman podman-compose polkit-kde-agent poppler-glib power-profiles-daemon pv python python-defusedxml python-flask python-flask-cors python-mysql-connector python-packaging python-pip python-pipx python-pyquery python-requests qalculate-gtk qbittorrent qemu-desktop qemu-emulators-full qpdf qt5ct qt6ct quickshell rebuild-detector reflector ripgrep rofi rsync rtkit rust s-nail samba sg3_utils slurp smartmontools snapper sof-firmware spotify-player starship stow sudo swappy swaync swtpm swww sysfsutils telegram-desktop terminus-font texinfo thunar thunar-archive-plugin thunar-volman thunderbird tmux ttf-bitstream-vera ttf-dejavu ttf-droid ttf-fira-code ttf-firacode-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-liberation ttf-meslo-nerd ttf-opensans tumbler typescript udftools ufw umockdev unrar unzip upower usb_modeswitch usbutils uwsm v4l2loopback-dkms vala vesktop vi vim virt-manager vlc vulkan-headers vulkan-intel waybar weechat wget which wine winetricks wireless-regdb wireplumber wlogout wlsunset wpa_supplicant xarchiver xdg-desktop-portal-gnome xdg-desktop-portal-gtk xdg-desktop-portal-hyprland xdg-user-dirs xf86-input-libinput xfsprogs xfwm4 xl2tpd xorg-server xorg-xdpyinfo xorg-xhost xorg-xinit xorg-xinput xorg-xkill xorg-xrandr xwayland-satellite yad yarn yazi yt-dlp zathura zathura-pdf-poppler zed zoxide
 
 # Install ALL AUR packages
-yay -S --needed ani-cli antigravity aylurs-gtk-shell-git eclipse-java-bin fish-done fresh-editor gem ghostmirror ghostty github-desktop-bin gtk-engine-murrine jetbrains-toolbox libastal-apps-git libastal-battery-git libastal-bluetooth-git libastal-cava-git libastal-hyprland-git libastal-mpris-git libastal-network-git libastal-notifd-git libastal-powerprofiles-git libastal-tray-git libastal-wireplumber-git linutil-git matugen-git mpvpaper opencode-bin pokemon-colorscripts-git spotify ttf-material-symbols-variable-git ttf-ms-win11-auto ttf-victor-mono visual-studio-code-bin visual-studio-code-insiders-bin wallust wazuh-agent webapp-manager wlrobs-hg zen-browser-bin
+paru -S --needed ani-cli antigravity aylurs-gtk-shell-git eclipse-java-bin fish-done fresh-editor gem ghostmirror ghostty github-desktop-bin gtk-engine-murrine jetbrains-toolbox libastal-apps-git libastal-battery-git libastal-bluetooth-git libastal-cava-git libastal-hyprland-git libastal-mpris-git libastal-network-git libastal-notifd-git libastal-powerprofiles-git libastal-tray-git libastal-wireplumber-git linutil-git matugen-git mpvpaper opencode-bin pokemon-colorscripts-git spotify ttf-material-symbols-variable-git ttf-ms-win11-auto ttf-victor-mono visual-studio-code-bin visual-studio-code-insiders-bin wallust wazuh-agent webapp-manager wlrobs-hg zen-browser-bin
 ```
 
 ### Method 2: Using Package Lists
@@ -230,6 +230,7 @@ mkinitcpio grub grub-hook efibootmgr efitools cryptsetup lvm2 btrfs-progs
 device-mapper dosfstools e2fsprogs exfatprogs f2fs-tools jfsutils xfsprogs
 nilfs-utils udftools mtools snapper timeshift btrfs-assistant
 ```
+
 </details>
 
 <details>
@@ -242,6 +243,7 @@ hyprwire niri xwayland-satellite uwsm xdg-desktop-portal-hyprland
 xdg-desktop-portal-gtk xdg-desktop-portal-gnome cliphist grim slurp swappy
 swww wlogout wlsunset
 ```
+
 </details>
 
 <details>
@@ -252,6 +254,7 @@ waybar rofi swaync thunar thunar-archive-plugin thunar-volman tumbler
 ffmpegthumbnailer nwg-look nwg-displays kvantum qt5ct qt6ct polkit-kde-agent
 gvfs gvfs-mtp xarchiver loupe okular mousepad
 ```
+
 </details>
 
 <details>
@@ -261,6 +264,7 @@ gvfs gvfs-mtp xarchiver loupe okular mousepad
 kitty ghostty alacritty tmux zsh fish nushell starship atuin zoxide lsd
 bash-completion nano nano-syntax-highlighting micro vim neovim
 ```
+
 </details>
 
 <details>
@@ -274,6 +278,7 @@ virt-manager libvirt qemu-desktop qemu-emulators-full swtpm distrobox
 visual-studio-code-bin visual-studio-code-insiders-bin zed jetbrains-toolbox
 opencode-bin eclipse-java-bin
 ```
+
 </details>
 
 <details>
@@ -285,6 +290,7 @@ easyeffects calf lsp-plugins noisetorch mpv mpv-mpris mpvpaper vlc
 obs-studio obs-vaapi obs-vkcapture v4l2loopback-dkms wlrobs-hg
 cava spotify spotify-player yt-dlp
 ```
+
 </details>
 
 <details>
@@ -294,6 +300,7 @@ cava spotify spotify-player yt-dlp
 gimp inkscape freecad librecad libreoffice-fresh loupe okular zathura
 zathura-pdf-poppler qpdf
 ```
+
 </details>
 
 <details>
@@ -305,6 +312,7 @@ bluez-utils bluez-libs bluez-hid2hci kdeconnect localsend telegram-desktop
 discord vesktop thunderbird weechat openssh openbsd-netcat wget iwd
 wpa_supplicant modemmanager dhclient dnsmasq samba nfs-utils
 ```
+
 </details>
 
 <details>
@@ -313,6 +321,7 @@ wpa_supplicant modemmanager dhclient dnsmasq samba nfs-utils
 ```
 cachy-browser chromium zen-browser-bin
 ```
+
 </details>
 
 <details>
@@ -327,6 +336,7 @@ adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts opendesktop-fonts
 noto-fonts noto-fonts-cjk noto-fonts-emoji noto-color-emoji-fontconfig
 awesome-terminal-fonts terminus-font
 ```
+
 </details>
 
 <details>
@@ -338,6 +348,7 @@ power-profiles-daemon upower ufw iptables-nft reflector pacman-contrib
 rebuild-detector paru yay-bin octopi flatpak 7zip unrar unzip rsync pv
 smartmontools hdparm lsscsi sg3_utils hwinfo hwdetect dmidecode lsb-release
 ```
+
 </details>
 
 <details>
@@ -350,6 +361,7 @@ libastal-hyprland-git libastal-mpris-git libastal-network-git libastal-notifd-gi
 libastal-powerprofiles-git libastal-tray-git libastal-wireplumber-git
 gtk-engine-murrine pokemon-colorscripts-git
 ```
+
 </details>
 
 <details>
@@ -358,6 +370,7 @@ gtk-engine-murrine pokemon-colorscripts-git
 ```
 asusctl supergfxctl rog-control-center
 ```
+
 </details>
 
 <details>
@@ -367,6 +380,7 @@ asusctl supergfxctl rog-control-center
 wine winetricks lib32-mesa lib32-vulkan-intel lib32-opencl-mesa
 lib32-libva-intel-driver vulkan-intel vulkan-headers opencl-mesa
 ```
+
 </details>
 
 ## Installer TUI
@@ -394,14 +408,14 @@ go run ./cmd/installer/
 
 The TUI presents a menu with the following options:
 
-| Mode | Description |
-|------|-------------|
-| **Full Install** | Everything: packages, dotfiles, shell setup, theming |
-| **Minimal** | Core packages + dotfiles only, skip shell plugins and theming |
-| **Custom** | Interactively select which stages to run |
-| **Packages Only** | Install pacman and AUR packages from the package lists |
-| **Dotfiles Only** | Clone the repo and run `stow .` to create symlinks |
-| **Upgrade** | Pull latest changes from the repo and re-run stow |
+| Mode              | Description                                                   |
+| ----------------- | ------------------------------------------------------------- |
+| **Full Install**  | Everything: packages, dotfiles, shell setup, theming          |
+| **Minimal**       | Core packages + dotfiles only, skip shell plugins and theming |
+| **Custom**        | Interactively select which stages to run                      |
+| **Packages Only** | Install pacman and AUR packages from the package lists        |
+| **Dotfiles Only** | Clone the repo and run `stow .` to create symlinks            |
+| **Upgrade**       | Pull latest changes from the repo and re-run stow             |
 
 ### What It Does
 
@@ -426,17 +440,17 @@ Stages that are already complete (e.g. packages already installed, OMZ already p
 
 ### Keybindings
 
-| Key | Context | Action |
-|-----|---------|--------|
-| `j`/`k` or arrows | Menu | Navigate options |
-| `1`-`6` | Menu | Quick select option |
-| `Enter` | Menu | Confirm selection |
-| `r` | Checklist | Retry failed stage |
-| `s` | Checklist | Skip current stage |
-| `v` | Any | Toggle verbose output |
-| `?` | Any | Toggle help overlay |
-| `r` | Complete | Reboot |
-| `q` / `Ctrl+C` | Any | Quit |
+| Key               | Context   | Action                |
+| ----------------- | --------- | --------------------- |
+| `j`/`k` or arrows | Menu      | Navigate options      |
+| `1`-`6`           | Menu      | Quick select option   |
+| `Enter`           | Menu      | Confirm selection     |
+| `r`               | Checklist | Retry failed stage    |
+| `s`               | Checklist | Skip current stage    |
+| `v`               | Any       | Toggle verbose output |
+| `?`               | Any       | Toggle help overlay   |
+| `r`               | Complete  | Reboot                |
+| `q` / `Ctrl+C`    | Any       | Quit                  |
 
 ### CLI Flags
 
