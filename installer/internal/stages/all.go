@@ -36,17 +36,17 @@ func CreateAllStages(cfg *config.Config, paths *config.Paths) *StageList {
 	// 6. Clone Dotfiles
 	list.Add(createCloneDotfilesStage(cfg, paths))
 
-	// 7. GNU Stow
-	list.Add(createStowStage(paths))
-
-	// 8. Oh-My-Zsh
+	// 7. Oh-My-Zsh (must run before stow so stow's .zshrc symlink wins)
 	list.Add(createOhMyZshStage(paths))
 
-	// 9. Zsh Plugins
+	// 8. Zsh Plugins
 	list.Add(createZshPluginsStage(paths))
 
-	// 10. Powerlevel10k
+	// 9. Powerlevel10k
 	list.Add(createPowerlevel10kStage(paths))
+
+	// 10. GNU Stow (runs after OMZ so symlinks overwrite OMZ's default .zshrc)
+	list.Add(createStowStage(paths))
 
 	// 11. TPM (Tmux Plugin Manager)
 	list.Add(createTPMStage(paths))
@@ -261,8 +261,13 @@ func createBackupStage(paths *config.Paths) *Stage {
 			return fmt.Errorf("failed to create backup dir: %w", err)
 		}
 
-		// Copy important directories
-		dirs := []string{"hypr", "waybar", "rofi", "kitty", "swaync", "tmux"}
+		// Backup all config directories that stow will overwrite
+		dirs := []string{
+			"ags", "fastfetch", "fish", "ghostty", "gtk-3.0", "gtk-4.0",
+			"hypr", "kitty", "lazygit", "nushell", "nwg-displays", "nwg-look",
+			"qt5ct", "qt6ct", "rofi", "swaync", "tmux", "uwsm", "wallust",
+			"waybar", "wlogout", "xdg-desktop-portal", "zathura",
+		}
 		for _, dir := range dirs {
 			src := filepath.Join(paths.Config, dir)
 			if executor.DirExists(src) {
@@ -273,7 +278,7 @@ func createBackupStage(paths *config.Paths) *Stage {
 		}
 
 		// Backup shell configs
-		shellFiles := []string{".zshrc", ".bashrc", ".zprofile"}
+		shellFiles := []string{".zshrc", ".bashrc", ".zprofile", ".p10k.zsh"}
 		for _, f := range shellFiles {
 			src := filepath.Join(paths.Home, f)
 			if executor.FileExists(src) {

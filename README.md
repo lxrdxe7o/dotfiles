@@ -14,6 +14,7 @@ Based on [JaKooLit's Hyprland-Dots](https://github.com/JaKooLit/Hyprland-Dots) w
 - [Screenshots](#screenshots)
 - [Requirements](#requirements)
 - [Dependencies](#dependencies)
+- [Installer TUI](#installer-tui)
 - [Installation](#installation)
 - [File Structure](#file-structure)
 - [Keybindings](#keybindings)
@@ -368,7 +369,103 @@ lib32-libva-intel-driver vulkan-intel vulkan-headers opencl-mesa
 ```
 </details>
 
+## Installer TUI
+
+An interactive terminal installer is included to automate the full setup. It handles package installation, dotfile deployment, shell configuration, and theming in a single guided process.
+
+### Quick Start
+
+```bash
+# Clone and run
+git clone https://github.com/xero/dotfiles.git ~/dotfiles
+cd ~/dotfiles/installer
+make build
+./dotfiles-installer
+```
+
+Or run directly with Go:
+
+```bash
+cd ~/dotfiles/installer
+go run ./cmd/installer/
+```
+
+### Installation Modes
+
+The TUI presents a menu with the following options:
+
+| Mode | Description |
+|------|-------------|
+| **Full Install** | Everything: packages, dotfiles, shell setup, theming |
+| **Minimal** | Core packages + dotfiles only, skip shell plugins and theming |
+| **Custom** | Interactively select which stages to run |
+| **Packages Only** | Install pacman and AUR packages from the package lists |
+| **Dotfiles Only** | Clone the repo and run `stow .` to create symlinks |
+| **Upgrade** | Pull latest changes from the repo and re-run stow |
+
+### What It Does
+
+The installer runs through up to 14 stages:
+
+1. **Check Prerequisites** - Verify `git` and `base-devel` are available
+2. **Install AUR Helper** - Install `yay` if no AUR helper is present
+3. **Install Official Packages** - Install from `pkglist-official.txt` via pacman
+4. **Install AUR Packages** - Install from `pkglist-aur.txt` via yay/paru
+5. **Backup Configs** - Copy existing `~/.config` dirs to `~/.config-backup`
+6. **Clone Dotfiles** - Clone the repo (or pull latest if already cloned)
+7. **Install Oh-My-Zsh** - Install the OMZ framework
+8. **Install Zsh Plugins** - F-Sy-H, autosuggestions, autocomplete, you-should-use
+9. **Install Powerlevel10k** - Install the p10k Zsh theme
+10. **Create Symlinks** - Run GNU Stow to link configs into place
+11. **Install TPM** - Install Tmux Plugin Manager
+12. **Set Default Shell** - Set Zsh as the login shell via `chsh`
+13. **Apply Theme** - Run wallust to generate color scheme from wallpaper
+14. **Cleanup** - Final summary
+
+Stages that are already complete (e.g. packages already installed, OMZ already present) are automatically skipped.
+
+### Keybindings
+
+| Key | Context | Action |
+|-----|---------|--------|
+| `j`/`k` or arrows | Menu | Navigate options |
+| `1`-`6` | Menu | Quick select option |
+| `Enter` | Menu | Confirm selection |
+| `r` | Checklist | Retry failed stage |
+| `s` | Checklist | Skip current stage |
+| `v` | Any | Toggle verbose output |
+| `?` | Any | Toggle help overlay |
+| `r` | Complete | Reboot |
+| `q` / `Ctrl+C` | Any | Quit |
+
+### CLI Flags
+
+```
+-v, -verbose       Show detailed command output
+-dry-run           Simulate installation without making changes
+-skip-backup       Skip backup of existing configs
+-path <dir>        Path for dotfiles repository (default: ~/dotfiles)
+-repo <url>        Dotfiles repository URL
+-version           Show version
+```
+
+### Building
+
+```bash
+cd ~/dotfiles/installer
+make build          # Compile binary
+make install        # Build + install to /usr/local/bin/
+make dev            # Run with --dry-run flag for testing
+make clean          # Remove binary
+```
+
+Requires Go 1.22+.
+
+---
+
 ## Installation
+
+The installer TUI above is the recommended way to set up. For manual installation, follow the steps below.
 
 ### 1. Clone the Repository
 
@@ -465,8 +562,12 @@ dotfiles/
 │   └── fastfetch/               # System info display
 ├── .zshrc                       # Zsh configuration
 ├── .zprofile                    # Zsh profile
-├── pkglist-official.txt         # Official repo packages (353 packages)
-├── pkglist-aur.txt              # AUR packages (36 packages)
+├── installer/                   # Interactive TUI installer (Go + Bubble Tea)
+│   ├── cmd/installer/main.go    # Entry point
+│   ├── internal/                # App logic, stages, UI, theming
+│   └── Makefile                 # Build targets
+├── pkglist-official.txt         # Official repo packages
+├── pkglist-aur.txt              # AUR packages
 └── README.md                    # This file
 ```
 

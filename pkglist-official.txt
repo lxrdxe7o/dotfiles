@@ -44,6 +44,7 @@ cachyos-wallpapers
 cachyos-zsh-config
 calf
 cava
+chafa
 chromium
 chwd
 cliphist
@@ -73,6 +74,7 @@ efibootmgr
 efitools
 ethtool
 evolution-data-server
+ex-vi-compat
 exfatprogs
 f2fs-tools
 ffmpegthumbnailer
@@ -199,6 +201,7 @@ noto-fonts-emoji
 nss-mdns
 ntp
 nushell
+nvme-cli
 nvtop
 nwg-displays
 nwg-look
@@ -307,7 +310,6 @@ uwsm
 v4l2loopback-dkms
 vala
 vesktop
-vi
 vim
 virt-manager
 vlc

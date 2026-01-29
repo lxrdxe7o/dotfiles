@@ -3,7 +3,6 @@ antigravity
 aylurs-gtk-shell-git
 eclipse-java-bin
 fish-done
-fresh-editor
 gem
 ghostmirror
 github-desktop-bin
