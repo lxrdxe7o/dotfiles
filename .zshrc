@@ -24,15 +24,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/home/xero/.local/bin:$PATH"
 
-export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
-export PATH=$JAVA_HOME/bin:$PATH
 
 plugins=(
-    F-Sy-H 
+    F-Sy-H
     archlinux
-    zsh-autosuggestions 
-    zsh-autocomplete 
-    you-should-use 
+    zsh-autosuggestions
+    zsh-autocomplete
+    you-should-use
     git
 )
 
@@ -97,3 +95,10 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+export PATH=$JAVA_HOME/bin:$PATH
