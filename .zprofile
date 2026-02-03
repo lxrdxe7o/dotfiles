@@ -8,4 +8,4 @@ if [[ -z $DISPLAY ]] && [[ $(tty) == /dev/tty1 ]]; then
 fi
 
 # Added by Toolbox App
-export PATH="$PATH:/home/xero/.local/share/JetBrains/Toolbox/scripts"
+# export PATH="$PATH:/home/xero/.local/share/JetBrains/Toolbox/scripts"
