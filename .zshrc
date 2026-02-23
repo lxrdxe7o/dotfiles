@@ -102,3 +102,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
+
+# Fix Android Emulator crash on Arch/Wayland
+export ANDROID_AVD_HOME="$HOME/.config/.android/avd"
+export QT_QPA_PLATFORM="xcb"
