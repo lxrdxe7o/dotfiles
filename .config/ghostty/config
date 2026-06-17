@@ -2,7 +2,7 @@
 confirm-close-surface = false
 
 ## Commands
-initial-command = direct:tmux attach
+## initial-command = direct:tmux attach
 command = /usr/bin/fish
 
 ## Clipboard

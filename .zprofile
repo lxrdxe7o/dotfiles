@@ -9,3 +9,7 @@ fi
 
 # Added by Toolbox App
 # export PATH="$PATH:/home/xero/.local/share/JetBrains/Toolbox/scripts"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/lxrdxe7o/.local/bin:$PATH"

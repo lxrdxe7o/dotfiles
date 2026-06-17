@@ -43,6 +43,8 @@ source $ZSH/oh-my-zsh.sh
 # Aliases being used
 alias lg='lazygit'
 alias ta='tmux attach'
+alias zed-update='curl https://zed.dev/install.sh | sh'
+
 # Custom animated fastfetch
 alias fetch="clear && kitten icat --place 30x20@1x2 ~/.config/fastfetch/bebop.gif | fastfetch --logo-width 30 --raw -"
 
@@ -106,3 +108,16 @@ export PATH=$JAVA_HOME/bin:$PATH
 # Fix Android Emulator crash on Arch/Wayland
 export ANDROID_AVD_HOME="$HOME/.config/.android/avd"
 export QT_QPA_PLATFORM="xcb"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH=~/.npm-global/bin:$PATH
+
+. "$HOME/.local/bin/env"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/lxrdxe7o/.local/bin:$PATH"
+export OBSIDIAN_VAULT_PATH="/home/lxrdxe7o/Documents/Library Sanctus"
