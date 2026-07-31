@@ -121,3 +121,12 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Added by Antigravity CLI installer
 export PATH="/home/lxrdxe7o/.local/bin:$PATH"
 export OBSIDIAN_VAULT_PATH="/home/lxrdxe7o/Documents/Library Sanctus"
+
+# bun — required for bun global binaries (e.g. omp / @oh-my-pi)
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# Empryo
+export PATH="$HOME/.empryo/bin:$PATH"

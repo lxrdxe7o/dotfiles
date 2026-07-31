@@ -48,3 +48,15 @@ set -gx OBSIDIAN_API_KEY "a81364af1ffb843d1162c6eb3651656570deef0ff10948e2a3d738
 
 # Added by Antigravity CLI installer
 set -gx PATH "/home/lxrdxe7o/.local/bin" $PATH
+
+# Composio CLI
+set --export COMPOSIO_INSTALL_DIR "/home/lxrdxe7o/.composio"
+set --export PATH $COMPOSIO_INSTALL_DIR $PATH
+
+# Kiro shell integration — source the static script directly.
+# (Do NOT use `kiro --locate-shell-integration-path`; Kiro's CLI launches the
+#  full IDE on invocation, which is what caused fish to open Kiro on startup.)
+if string match -q -- "$TERM_PROGRAM" kiro
+    set -l __kiro_integration /opt/kiro/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration.fish
+    test -f "$__kiro_integration"; and . "$__kiro_integration"
+end

@@ -23,3 +23,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Added by Antigravity CLI installer
 export PATH="/home/lxrdxe7o/.local/bin:$PATH"
 export OBSIDIAN_VAULT_PATH="/home/lxrdxe7o/Documents/Library Sanctus"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path bash)"
